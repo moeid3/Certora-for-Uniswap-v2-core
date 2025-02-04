@@ -10,7 +10,7 @@ Follow the [Certora installation guide](https://docs.certora.com/en/latest/docs/
 > An API Key is required for local testing. Although the prover will run on a Github Actions' CI environment on selected Pull Requests.
 
 ## Running the verification
-
+Head to the `certora` directory.
 The Certora Verification Tool proves specs for contracts, which are defined by the `./specs.json` file along with their pre-configured options.
 
 The verification script `./run.js` is used to submit verification jobs to the Certora Verification service.
