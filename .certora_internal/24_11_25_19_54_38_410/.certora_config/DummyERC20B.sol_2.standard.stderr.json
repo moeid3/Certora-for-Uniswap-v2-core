@@ -1,0 +1,17 @@
+Traceback (most recent call last):
+  File "/home/joyboy3/.local/bin/solc", line 5, in <module>
+    from solc_select.__main__ import solc
+  File "/home/joyboy3/.local/share/pipx/venvs/solc-select/lib/python3.12/site-packages/solc_select/__main__.py", line 11, in <module>
+    from .solc_select import (
+  File "/home/joyboy3/.local/share/pipx/venvs/solc-select/lib/python3.12/site-packages/solc_select/solc_select.py", line 4, in <module>
+    from zipfile import ZipFile
+  File "/home/linuxbrew/.linuxbrew/opt/python@3.12/lib/python3.12/zipfile/__init__.py", line 10, in <module>
+    import shutil
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1322, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1262, in _find_spec
+  File "<frozen importlib._bootstrap_external>", line 1528, in find_spec
+  File "<frozen importlib._bootstrap_external>", line 1502, in _get_spec
+  File "<frozen importlib._bootstrap_external>", line 1634, in find_spec
+  File "<frozen importlib._bootstrap_external>", line 159, in _path_isfile
+KeyboardInterrupt

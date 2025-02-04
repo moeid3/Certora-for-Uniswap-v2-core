@@ -1,0 +1,21 @@
+Traceback (most recent call last):
+  File "/home/joyboy3/.local/bin/solc", line 8, in <module>
+    sys.exit(solc())
+             ^^^^^^
+  File "/home/joyboy3/.local/share/pipx/venvs/solc-select/lib/python3.12/site-packages/solc_select/__main__.py", line 94, in solc
+    subprocess.run(
+  File "/home/linuxbrew/.linuxbrew/opt/python@3.12/lib/python3.12/subprocess.py", line 550, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/linuxbrew/.linuxbrew/opt/python@3.12/lib/python3.12/subprocess.py", line 1201, in communicate
+    self.wait()
+  File "/home/linuxbrew/.linuxbrew/opt/python@3.12/lib/python3.12/subprocess.py", line 1264, in wait
+    return self._wait(timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/linuxbrew/.linuxbrew/opt/python@3.12/lib/python3.12/subprocess.py", line 2053, in _wait
+    (pid, sts) = self._try_wait(0)
+                 ^^^^^^^^^^^^^^^^^
+  File "/home/linuxbrew/.linuxbrew/opt/python@3.12/lib/python3.12/subprocess.py", line 2011, in _try_wait
+    (pid, sts) = os.waitpid(self.pid, wait_flags)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

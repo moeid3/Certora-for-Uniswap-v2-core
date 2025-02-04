@@ -1,0 +1,1205 @@
+{
+    "original": "https://prover.certora.com/output/604718/569eee389b05400786ffb31b0aac31fe?anonymousKey=41b2d7d77fb7a37af1ad39e9f038c151540d1206",
+    "mutants": [
+        {
+            "gambit_mutant": {
+                "filename": "gambit_out/mutants/1/contracts/UniswapV2Pair.sol",
+                "original_filename": "contracts/UniswapV2Pair.sol",
+                "directory": "gambit_out/mutants/1",
+                "id": "1",
+                "diff": "--- original\n+++ mutant\n@@ -12,7 +12,8 @@\n     using SafeMath  for uint;\n     using UQ112x112 for uint224;\n \n-    uint public constant MINIMUM_LIQUIDITY = 10**3;\n+    /// SwapArgumentsOperatorMutation(`10**3` |==> `3 ** 10`) of: `uint public constant MINIMUM_LIQUIDITY = 10**3;`\n+    uint public constant MINIMUM_LIQUIDITY = 3 ** 10;\n     bytes4 private constant SELECTOR = bytes4(keccak256(bytes('transfer(address,uint256)')));\n \n     address public factory;\n",
+                "description": "SwapArgumentsOperatorMutation",
+                "name": "1_UniswapV2Pair"
+            },
+            "link": "https://prover.certora.com/jobStatus/604718/bd2fba4904da448eb6ea55ad0d5783aa?anonymousKey=fc99ccc42efe14b54214fe5e1d3486e0b57759bc",
+            "success": true,
+            "run_directory": ".certora_internal/24_11_28_19_44_57_103/.certora_sources",
+            "rule_report_link": "https://prover.certora.com/output/604718/bd2fba4904da448eb6ea55ad0d5783aa?anonymousKey=fc99ccc42efe14b54214fe5e1d3486e0b57759bc"
+        },
+        {
+            "gambit_mutant": {
+                "filename": "gambit_out/mutants/2/contracts/UniswapV2Pair.sol",
+                "original_filename": "contracts/UniswapV2Pair.sol",
+                "directory": "gambit_out/mutants/2",
+                "id": "2",
+                "diff": "--- original\n+++ mutant\n@@ -29,7 +29,8 @@\n \n     uint private unlocked = 1;\n     modifier lock() {\n-        require(unlocked == 1, 'UniswapV2: LOCKED');\n+        /// DeleteExpressionMutation(`require(unlocked == 1, 'UniswapV2: LOCKED')` |==> `assert(true)`) of: `require(unlocked == 1, 'UniswapV2: LOCKED');`\n+        assert(true);\n         unlocked = 0;\n         _;\n         unlocked = 1;\n",
+                "description": "DeleteExpressionMutation",
+                "name": "2_UniswapV2Pair"
+            },
+            "link": "https://prover.certora.com/jobStatus/604718/d71057b3b07f4cb88c25ede71bed3cc5?anonymousKey=6f47709e4c2e728c6da049942ff277631eccf2c7",
+            "success": true,
+            "run_directory": ".certora_internal/24_11_28_19_45_11_014/.certora_sources",
+            "rule_report_link": "https://prover.certora.com/output/604718/d71057b3b07f4cb88c25ede71bed3cc5?anonymousKey=6f47709e4c2e728c6da049942ff277631eccf2c7"
+        },
+        {
+            "gambit_mutant": {
+                "filename": "gambit_out/mutants/3/contracts/UniswapV2Pair.sol",
+                "original_filename": "contracts/UniswapV2Pair.sol",
+                "directory": "gambit_out/mutants/3",
+                "id": "3",
+                "diff": "--- original\n+++ mutant\n@@ -29,7 +29,8 @@\n \n     uint private unlocked = 1;\n     modifier lock() {\n-        require(unlocked == 1, 'UniswapV2: LOCKED');\n+        /// RequireMutation(`unlocked == 1` |==> `true`) of: `require(unlocked == 1, 'UniswapV2: LOCKED');`\n+        require(true, 'UniswapV2: LOCKED');\n         unlocked = 0;\n         _;\n         unlocked = 1;\n",
+                "description": "RequireMutation",
+                "name": "3_UniswapV2Pair"
+            },
+            "link": "https://prover.certora.com/jobStatus/604718/fe1e61c9988b46c9890149860733d99e?anonymousKey=09575227d97ed3bff35ff6183ea093e6be69daf4",
+            "success": true,
+            "run_directory": ".certora_internal/24_11_28_19_45_20_707/.certora_sources",
+            "rule_report_link": "https://prover.certora.com/output/604718/fe1e61c9988b46c9890149860733d99e?anonymousKey=09575227d97ed3bff35ff6183ea093e6be69daf4"
+        },
+        {
+            "gambit_mutant": {
+                "filename": "gambit_out/mutants/4/contracts/UniswapV2Pair.sol",
+                "original_filename": "contracts/UniswapV2Pair.sol",
+                "directory": "gambit_out/mutants/4",
+                "id": "4",
+                "diff": "--- original\n+++ mutant\n@@ -30,7 +30,8 @@\n     uint private unlocked = 1;\n     modifier lock() {\n         require(unlocked == 1, 'UniswapV2: LOCKED');\n-        unlocked = 0;\n+        /// AssignmentMutation(`0` |==> `1`) of: `unlocked = 0;`\n+        unlocked = 1;\n         _;\n         unlocked = 1;\n     }\n",
+                "description": "AssignmentMutation",
+                "name": "4_UniswapV2Pair"
+            },
+            "link": "https://prover.certora.com/jobStatus/604718/5f323eb23a9a4ce1819371251b0d8752?anonymousKey=e7d4d37f6d607b6986997a27f88e0b4b7cca47c8",
+            "success": true,
+            "run_directory": ".certora_internal/24_11_28_19_44_57_333/.certora_sources",
+            "rule_report_link": "https://prover.certora.com/output/604718/5f323eb23a9a4ce1819371251b0d8752?anonymousKey=e7d4d37f6d607b6986997a27f88e0b4b7cca47c8"
+        },
+        {
+            "gambit_mutant": {
+                "filename": "gambit_out/mutants/5/contracts/UniswapV2Pair.sol",
+                "original_filename": "contracts/UniswapV2Pair.sol",
+                "directory": "gambit_out/mutants/5",
+                "id": "5",
+                "diff": "--- original\n+++ mutant\n@@ -36,7 +36,8 @@\n     }\n \n     function getReserves() public view returns (uint112 _reserve0, uint112 _reserve1, uint32 _blockTimestampLast) {\n-        _reserve0 = reserve0;\n+        /// AssignmentMutation(`reserve0` |==> `1`) of: `_reserve0 = reserve0;`\n+        _reserve0 = 1;\n         _reserve1 = reserve1;\n         _blockTimestampLast = blockTimestampLast;\n     }\n",
+                "description": "AssignmentMutation",
+                "name": "5_UniswapV2Pair"
+            },
+            "link": "https://prover.certora.com/jobStatus/604718/9b277a649160405db4e2e2cd17bb0742?anonymousKey=d93d75689a99d7c9081404f56e7288268dbe41a7",
+            "success": true,
+            "run_directory": ".certora_internal/24_11_28_19_45_15_774/.certora_sources",
+            "rule_report_link": "https://prover.certora.com/output/604718/9b277a649160405db4e2e2cd17bb0742?anonymousKey=d93d75689a99d7c9081404f56e7288268dbe41a7"
+        },
+        {
+            "gambit_mutant": {
+                "filename": "gambit_out/mutants/6/contracts/UniswapV2Pair.sol",
+                "original_filename": "contracts/UniswapV2Pair.sol",
+                "directory": "gambit_out/mutants/6",
+                "id": "6",
+                "diff": "--- original\n+++ mutant\n@@ -37,7 +37,8 @@\n \n     function getReserves() public view returns (uint112 _reserve0, uint112 _reserve1, uint32 _blockTimestampLast) {\n         _reserve0 = reserve0;\n-        _reserve1 = reserve1;\n+        /// AssignmentMutation(`reserve1` |==> `1`) of: `_reserve1 = reserve1;`\n+        _reserve1 = 1;\n         _blockTimestampLast = blockTimestampLast;\n     }\n \n",
+                "description": "AssignmentMutation",
+                "name": "6_UniswapV2Pair"
+            },
+            "link": "https://prover.certora.com/jobStatus/604718/1a14dc7d7d22409fb2b52aa8dcfd2213?anonymousKey=7834897bda858d47a2e6b595c391d0a1dc74a81c",
+            "success": true,
+            "run_directory": ".certora_internal/24_11_28_19_45_28_084/.certora_sources",
+            "rule_report_link": "https://prover.certora.com/output/604718/1a14dc7d7d22409fb2b52aa8dcfd2213?anonymousKey=7834897bda858d47a2e6b595c391d0a1dc74a81c"
+        },
+        {
+            "gambit_mutant": {
+                "filename": "gambit_out/mutants/7/contracts/UniswapV2Pair.sol",
+                "original_filename": "contracts/UniswapV2Pair.sol",
+                "directory": "gambit_out/mutants/7",
+                "id": "7",
+                "diff": "--- original\n+++ mutant\n@@ -38,7 +38,8 @@\n     function getReserves() public view returns (uint112 _reserve0, uint112 _reserve1, uint32 _blockTimestampLast) {\n         _reserve0 = reserve0;\n         _reserve1 = reserve1;\n-        _blockTimestampLast = blockTimestampLast;\n+        /// AssignmentMutation(`blockTimestampLast` |==> `0`) of: `_blockTimestampLast = blockTimestampLast;`\n+        _blockTimestampLast = 0;\n     }\n \n     function _safeTransfer(address token, address to, uint value) private {\n",
+                "description": "AssignmentMutation",
+                "name": "7_UniswapV2Pair"
+            },
+            "link": "https://prover.certora.com/jobStatus/604718/7e50ba61f9b448b28f16adf45de6f2e2?anonymousKey=2d19c75eaf113cac8273a91808c2ada9df7edeee",
+            "success": true,
+            "run_directory": ".certora_internal/24_11_28_19_44_57_857/.certora_sources",
+            "rule_report_link": "https://prover.certora.com/output/604718/7e50ba61f9b448b28f16adf45de6f2e2?anonymousKey=2d19c75eaf113cac8273a91808c2ada9df7edeee"
+        },
+        {
+            "gambit_mutant": {
+                "filename": "gambit_out/mutants/8/contracts/UniswapV2Pair.sol",
+                "original_filename": "contracts/UniswapV2Pair.sol",
+                "directory": "gambit_out/mutants/8",
+                "id": "8",
+                "diff": "--- original\n+++ mutant\n@@ -43,7 +43,8 @@\n \n     function _safeTransfer(address token, address to, uint value) private {\n         (bool success, bytes memory data) = token.call(abi.encodeWithSelector(SELECTOR, to, value));\n-        require(success && (data.length == 0 || abi.decode(data, (bool))), 'UniswapV2: TRANSFER_FAILED');\n+        /// DeleteExpressionMutation(`require(success && (data.length == 0 || abi.decode(data, (bool))), 'UniswapV2: TRANSFER_FAILED')` |==> `assert(true)`) of: `require(success && (data.length == 0 || abi.decode(data, (bool))), 'UniswapV2: TRANSFER_FAILED');`\n+        assert(true);\n     }\n \n     event Mint(address indexed sender, uint amount0, uint amount1);\n",
+                "description": "DeleteExpressionMutation",
+                "name": "8_UniswapV2Pair"
+            },
+            "link": "https://prover.certora.com/jobStatus/604718/25f488b602a1465b89a806707c6fa377?anonymousKey=90859f1e8685bb26bd3f0617f9892ee64db4f233",
+            "success": true,
+            "run_directory": ".certora_internal/24_11_28_19_45_16_251/.certora_sources",
+            "rule_report_link": "https://prover.certora.com/output/604718/25f488b602a1465b89a806707c6fa377?anonymousKey=90859f1e8685bb26bd3f0617f9892ee64db4f233"
+        },
+        {
+            "gambit_mutant": {
+                "filename": "gambit_out/mutants/9/contracts/UniswapV2Pair.sol",
+                "original_filename": "contracts/UniswapV2Pair.sol",
+                "directory": "gambit_out/mutants/9",
+                "id": "9",
+                "diff": "--- original\n+++ mutant\n@@ -65,7 +65,8 @@\n     // called once by the factory at time of deployment\n     function initialize(address _token0, address _token1) external {\n         require(msg.sender == factory, 'UniswapV2: FORBIDDEN'); // sufficient check\n-        token0 = _token0;\n+        /// DeleteExpressionMutation(`token0 = _token0` |==> `assert(true)`) of: `token0 = _token0;`\n+        assert(true);\n         token1 = _token1;\n     }\n \n",
+                "description": "DeleteExpressionMutation",
+                "name": "9_UniswapV2Pair"
+            },
+            "link": "https://prover.certora.com/jobStatus/604718/ae970bd91d334f8ca645a4bc7216d9d5?anonymousKey=f2ab860a9a24ccc6d7263d341042ebedac9e52c6",
+            "success": true,
+            "run_directory": ".certora_internal/24_11_28_19_45_29_211/.certora_sources",
+            "rule_report_link": "https://prover.certora.com/output/604718/ae970bd91d334f8ca645a4bc7216d9d5?anonymousKey=f2ab860a9a24ccc6d7263d341042ebedac9e52c6"
+        },
+        {
+            "gambit_mutant": {
+                "filename": "gambit_out/mutants/10/contracts/UniswapV2Pair.sol",
+                "original_filename": "contracts/UniswapV2Pair.sol",
+                "directory": "gambit_out/mutants/10",
+                "id": "10",
+                "diff": "--- original\n+++ mutant\n@@ -71,7 +71,8 @@\n \n     // update reserves and, on the first call per block, price accumulators\n     function _update(uint balance0, uint balance1, uint112 _reserve0, uint112 _reserve1) private {\n-        require(balance0 <= uint112(-1) && balance1 <= uint112(-1), 'UniswapV2: OVERFLOW');\n+        /// DeleteExpressionMutation(`require(balance0 <= uint112(-1) && balance1 <= uint112(-1), 'UniswapV2: OVERFLOW')` |==> `assert(true)`) of: `require(balance0 <= uint112(-1) && balance1 <= uint112(-1), 'UniswapV2: OVERFLOW');`\n+        assert(true);\n         uint32 blockTimestamp = uint32(block.timestamp % 2**32);\n         uint32 timeElapsed = blockTimestamp - blockTimestampLast; // overflow is desired\n         if (timeElapsed > 0 && _reserve0 != 0 && _reserve1 != 0) {\n",
+                "description": "DeleteExpressionMutation",
+                "name": "10_UniswapV2Pair"
+            },
+            "link": "https://prover.certora.com/jobStatus/604718/f119300b6a1a491eb725b17cdebec02d?anonymousKey=2a5faa5b911464184ac6b7f7a9135515a8d8a70e",
+            "success": true,
+            "run_directory": ".certora_internal/24_11_28_19_44_57_114/.certora_sources",
+            "rule_report_link": "https://prover.certora.com/output/604718/f119300b6a1a491eb725b17cdebec02d?anonymousKey=2a5faa5b911464184ac6b7f7a9135515a8d8a70e"
+        },
+        {
+            "gambit_mutant": {
+                "filename": "gambit_out/mutants/11/contracts/UniswapV2Pair.sol",
+                "original_filename": "contracts/UniswapV2Pair.sol",
+                "directory": "gambit_out/mutants/11",
+                "id": "11",
+                "diff": "--- original\n+++ mutant\n@@ -71,7 +71,8 @@\n \n     // update reserves and, on the first call per block, price accumulators\n     function _update(uint balance0, uint balance1, uint112 _reserve0, uint112 _reserve1) private {\n-        require(balance0 <= uint112(-1) && balance1 <= uint112(-1), 'UniswapV2: OVERFLOW');\n+        /// RequireMutation(`balance0 <= uint112(-1) && balance1 <= uint112(-1)` |==> `false`) of: `require(balance0 <= uint112(-1) && balance1 <= uint112(-1), 'UniswapV2: OVERFLOW');`\n+        require(false, 'UniswapV2: OVERFLOW');\n         uint32 blockTimestamp = uint32(block.timestamp % 2**32);\n         uint32 timeElapsed = blockTimestamp - blockTimestampLast; // overflow is desired\n         if (timeElapsed > 0 && _reserve0 != 0 && _reserve1 != 0) {\n",
+                "description": "RequireMutation",
+                "name": "11_UniswapV2Pair"
+            },
+            "link": "https://prover.certora.com/jobStatus/604718/f97b6206197f48f8a2156850fe01a689?anonymousKey=65b0207eb041547a6669ec431280a8f70a4985f5",
+            "success": true,
+            "run_directory": ".certora_internal/24_11_28_19_45_11_061/.certora_sources",
+            "rule_report_link": "https://prover.certora.com/output/604718/f97b6206197f48f8a2156850fe01a689?anonymousKey=65b0207eb041547a6669ec431280a8f70a4985f5"
+        },
+        {
+            "gambit_mutant": {
+                "filename": "gambit_out/mutants/12/contracts/UniswapV2Pair.sol",
+                "original_filename": "contracts/UniswapV2Pair.sol",
+                "directory": "gambit_out/mutants/12",
+                "id": "12",
+                "diff": "--- original\n+++ mutant\n@@ -71,7 +71,8 @@\n \n     // update reserves and, on the first call per block, price accumulators\n     function _update(uint balance0, uint balance1, uint112 _reserve0, uint112 _reserve1) private {\n-        require(balance0 <= uint112(-1) && balance1 <= uint112(-1), 'UniswapV2: OVERFLOW');\n+        /// UnaryOperatorMutation(`-` |==> `~`) of: `require(balance0 <= uint112(-1) && balance1 <= uint112(-1), 'UniswapV2: OVERFLOW');`\n+        require(balance0 <= uint112(~1) && balance1 <= uint112(-1), 'UniswapV2: OVERFLOW');\n         uint32 blockTimestamp = uint32(block.timestamp % 2**32);\n         uint32 timeElapsed = blockTimestamp - blockTimestampLast; // overflow is desired\n         if (timeElapsed > 0 && _reserve0 != 0 && _reserve1 != 0) {\n",
+                "description": "UnaryOperatorMutation",
+                "name": "12_UniswapV2Pair"
+            },
+            "link": "https://prover.certora.com/jobStatus/604718/ec04322346da45a3b7ecb4eb23d68f26?anonymousKey=2453ce19ba49b217aa097e53858b674c8a5e2dcc",
+            "success": true,
+            "run_directory": ".certora_internal/24_11_28_19_45_23_235/.certora_sources",
+            "rule_report_link": "https://prover.certora.com/output/604718/ec04322346da45a3b7ecb4eb23d68f26?anonymousKey=2453ce19ba49b217aa097e53858b674c8a5e2dcc"
+        },
+        {
+            "gambit_mutant": {
+                "filename": "gambit_out/mutants/13/contracts/UniswapV2Pair.sol",
+                "original_filename": "contracts/UniswapV2Pair.sol",
+                "directory": "gambit_out/mutants/13",
+                "id": "13",
+                "diff": "--- original\n+++ mutant\n@@ -72,7 +72,8 @@\n     // update reserves and, on the first call per block, price accumulators\n     function _update(uint balance0, uint balance1, uint112 _reserve0, uint112 _reserve1) private {\n         require(balance0 <= uint112(-1) && balance1 <= uint112(-1), 'UniswapV2: OVERFLOW');\n-        uint32 blockTimestamp = uint32(block.timestamp % 2**32);\n+        /// BinaryOpMutation(`%` |==> `+`) of: `uint32 blockTimestamp = uint32(block.timestamp % 2**32);`\n+        uint32 blockTimestamp = uint32(block.timestamp+2**32);\n         uint32 timeElapsed = blockTimestamp - blockTimestampLast; // overflow is desired\n         if (timeElapsed > 0 && _reserve0 != 0 && _reserve1 != 0) {\n             // * never overflows, and + overflow is desired\n",
+                "description": "BinaryOpMutation",
+                "name": "13_UniswapV2Pair"
+            },
+            "link": "https://prover.certora.com/jobStatus/604718/d3e8e0825c5b415c85140ac5ba0b3bcd?anonymousKey=e91000a2da96353def1586bc6b875188f80a2b24",
+            "success": true,
+            "run_directory": ".certora_internal/24_11_28_19_44_57_550/.certora_sources",
+            "rule_report_link": "https://prover.certora.com/output/604718/d3e8e0825c5b415c85140ac5ba0b3bcd?anonymousKey=e91000a2da96353def1586bc6b875188f80a2b24"
+        },
+        {
+            "gambit_mutant": {
+                "filename": "gambit_out/mutants/14/contracts/UniswapV2Pair.sol",
+                "original_filename": "contracts/UniswapV2Pair.sol",
+                "directory": "gambit_out/mutants/14",
+                "id": "14",
+                "diff": "--- original\n+++ mutant\n@@ -72,7 +72,8 @@\n     // update reserves and, on the first call per block, price accumulators\n     function _update(uint balance0, uint balance1, uint112 _reserve0, uint112 _reserve1) private {\n         require(balance0 <= uint112(-1) && balance1 <= uint112(-1), 'UniswapV2: OVERFLOW');\n-        uint32 blockTimestamp = uint32(block.timestamp % 2**32);\n+        /// SwapArgumentsOperatorMutation(`2**32` |==> `32 ** 2`) of: `uint32 blockTimestamp = uint32(block.timestamp % 2**32);`\n+        uint32 blockTimestamp = uint32(block.timestamp % 32 ** 2);\n         uint32 timeElapsed = blockTimestamp - blockTimestampLast; // overflow is desired\n         if (timeElapsed > 0 && _reserve0 != 0 && _reserve1 != 0) {\n             // * never overflows, and + overflow is desired\n",
+                "description": "SwapArgumentsOperatorMutation",
+                "name": "14_UniswapV2Pair"
+            },
+            "link": "https://prover.certora.com/jobStatus/604718/b3d5ec69980649a1ad83ea97e3df8d5b?anonymousKey=e04b92b8cb7fcd887e68a0f85eb050c33c28d05d",
+            "success": true,
+            "run_directory": ".certora_internal/24_11_28_19_45_16_875/.certora_sources",
+            "rule_report_link": "https://prover.certora.com/output/604718/b3d5ec69980649a1ad83ea97e3df8d5b?anonymousKey=e04b92b8cb7fcd887e68a0f85eb050c33c28d05d"
+        },
+        {
+            "gambit_mutant": {
+                "filename": "gambit_out/mutants/15/contracts/UniswapV2Pair.sol",
+                "original_filename": "contracts/UniswapV2Pair.sol",
+                "directory": "gambit_out/mutants/15",
+                "id": "15",
+                "diff": "--- original\n+++ mutant\n@@ -73,7 +73,8 @@\n     function _update(uint balance0, uint balance1, uint112 _reserve0, uint112 _reserve1) private {\n         require(balance0 <= uint112(-1) && balance1 <= uint112(-1), 'UniswapV2: OVERFLOW');\n         uint32 blockTimestamp = uint32(block.timestamp % 2**32);\n-        uint32 timeElapsed = blockTimestamp - blockTimestampLast; // overflow is desired\n+        /// BinaryOpMutation(`-` |==> `/`) of: `uint32 timeElapsed = blockTimestamp - blockTimestampLast; // overflow is desired`\n+        uint32 timeElapsed = blockTimestamp/blockTimestampLast; // overflow is desired\n         if (timeElapsed > 0 && _reserve0 != 0 && _reserve1 != 0) {\n             // * never overflows, and + overflow is desired\n             price0CumulativeLast += uint(UQ112x112.encode(_reserve1).uqdiv(_reserve0)) * timeElapsed;\n",
+                "description": "BinaryOpMutation",
+                "name": "15_UniswapV2Pair"
+            },
+            "link": "https://prover.certora.com/jobStatus/604718/b51ed1ec0fe74dd281093472cbe1a658?anonymousKey=a161dda7ed6db3461bf06a38237f6176b6fe0918",
+            "success": true,
+            "run_directory": ".certora_internal/24_11_28_19_45_29_454/.certora_sources",
+            "rule_report_link": "https://prover.certora.com/output/604718/b51ed1ec0fe74dd281093472cbe1a658?anonymousKey=a161dda7ed6db3461bf06a38237f6176b6fe0918"
+        },
+        {
+            "gambit_mutant": {
+                "filename": "gambit_out/mutants/16/contracts/UniswapV2Pair.sol",
+                "original_filename": "contracts/UniswapV2Pair.sol",
+                "directory": "gambit_out/mutants/16",
+                "id": "16",
+                "diff": "--- original\n+++ mutant\n@@ -76,7 +76,8 @@\n         uint32 timeElapsed = blockTimestamp - blockTimestampLast; // overflow is desired\n         if (timeElapsed > 0 && _reserve0 != 0 && _reserve1 != 0) {\n             // * never overflows, and + overflow is desired\n-            price0CumulativeLast += uint(UQ112x112.encode(_reserve1).uqdiv(_reserve0)) * timeElapsed;\n+            /// DeleteExpressionMutation(`price0CumulativeLast += uint(UQ112x112.encode(_reserve1).uqdiv(_reserve0)) * timeElapsed` |==> `assert(true)`) of: `price0CumulativeLast += uint(UQ112x112.encode(_reserve1).uqdiv(_reserve0)) * timeElapsed;`\n+            assert(true);\n             price1CumulativeLast += uint(UQ112x112.encode(_reserve0).uqdiv(_reserve1)) * timeElapsed;\n         }\n         reserve0 = uint112(balance0);\n",
+                "description": "DeleteExpressionMutation",
+                "name": "16_UniswapV2Pair"
+            },
+            "link": "https://prover.certora.com/jobStatus/604718/12985eeb11734f2aab8ab4f9d5c4ff0c?anonymousKey=c415bd48702b6b1de668105b39f398143ccc504b",
+            "success": true,
+            "run_directory": ".certora_internal/24_11_28_19_44_57_180/.certora_sources",
+            "rule_report_link": "https://prover.certora.com/output/604718/12985eeb11734f2aab8ab4f9d5c4ff0c?anonymousKey=c415bd48702b6b1de668105b39f398143ccc504b"
+        },
+        {
+            "gambit_mutant": {
+                "filename": "gambit_out/mutants/17/contracts/UniswapV2Pair.sol",
+                "original_filename": "contracts/UniswapV2Pair.sol",
+                "directory": "gambit_out/mutants/17",
+                "id": "17",
+                "diff": "--- original\n+++ mutant\n@@ -76,7 +76,8 @@\n         uint32 timeElapsed = blockTimestamp - blockTimestampLast; // overflow is desired\n         if (timeElapsed > 0 && _reserve0 != 0 && _reserve1 != 0) {\n             // * never overflows, and + overflow is desired\n-            price0CumulativeLast += uint(UQ112x112.encode(_reserve1).uqdiv(_reserve0)) * timeElapsed;\n+            /// AssignmentMutation(`uint(UQ112x112.encode(_reserve1).uqdiv(_reserve0)) * timeElapsed` |==> `1`) of: `price0CumulativeLast += uint(UQ112x112.encode(_reserve1).uqdiv(_reserve0)) * timeElapsed;`\n+            price0CumulativeLast += 1;\n             price1CumulativeLast += uint(UQ112x112.encode(_reserve0).uqdiv(_reserve1)) * timeElapsed;\n         }\n         reserve0 = uint112(balance0);\n",
+                "description": "AssignmentMutation",
+                "name": "17_UniswapV2Pair"
+            },
+            "link": "https://prover.certora.com/jobStatus/604718/0d9e662b5eb84464b1a62adca5960fe4?anonymousKey=e4fb86236334d3ecec8d90258a782b97d6409ffd",
+            "success": true,
+            "run_directory": ".certora_internal/24_11_28_19_45_15_038/.certora_sources",
+            "rule_report_link": "https://prover.certora.com/output/604718/0d9e662b5eb84464b1a62adca5960fe4?anonymousKey=e4fb86236334d3ecec8d90258a782b97d6409ffd"
+        },
+        {
+            "gambit_mutant": {
+                "filename": "gambit_out/mutants/18/contracts/UniswapV2Pair.sol",
+                "original_filename": "contracts/UniswapV2Pair.sol",
+                "directory": "gambit_out/mutants/18",
+                "id": "18",
+                "diff": "--- original\n+++ mutant\n@@ -76,7 +76,8 @@\n         uint32 timeElapsed = blockTimestamp - blockTimestampLast; // overflow is desired\n         if (timeElapsed > 0 && _reserve0 != 0 && _reserve1 != 0) {\n             // * never overflows, and + overflow is desired\n-            price0CumulativeLast += uint(UQ112x112.encode(_reserve1).uqdiv(_reserve0)) * timeElapsed;\n+            /// BinaryOpMutation(`*` |==> `%`) of: `price0CumulativeLast += uint(UQ112x112.encode(_reserve1).uqdiv(_reserve0)) * timeElapsed;`\n+            price0CumulativeLast += uint(UQ112x112.encode(_reserve1).uqdiv(_reserve0))%timeElapsed;\n             price1CumulativeLast += uint(UQ112x112.encode(_reserve0).uqdiv(_reserve1)) * timeElapsed;\n         }\n         reserve0 = uint112(balance0);\n",
+                "description": "BinaryOpMutation",
+                "name": "18_UniswapV2Pair"
+            },
+            "link": "https://prover.certora.com/jobStatus/604718/cd7e9859598b4bf3a811a414a61ad328?anonymousKey=090b50191aa990102caa56db3cec3ede1a370991",
+            "success": true,
+            "run_directory": ".certora_internal/24_11_28_19_45_28_218/.certora_sources",
+            "rule_report_link": "https://prover.certora.com/output/604718/cd7e9859598b4bf3a811a414a61ad328?anonymousKey=090b50191aa990102caa56db3cec3ede1a370991"
+        },
+        {
+            "gambit_mutant": {
+                "filename": "gambit_out/mutants/19/contracts/UniswapV2Pair.sol",
+                "original_filename": "contracts/UniswapV2Pair.sol",
+                "directory": "gambit_out/mutants/19",
+                "id": "19",
+                "diff": "--- original\n+++ mutant\n@@ -77,7 +77,8 @@\n         if (timeElapsed > 0 && _reserve0 != 0 && _reserve1 != 0) {\n             // * never overflows, and + overflow is desired\n             price0CumulativeLast += uint(UQ112x112.encode(_reserve1).uqdiv(_reserve0)) * timeElapsed;\n-            price1CumulativeLast += uint(UQ112x112.encode(_reserve0).uqdiv(_reserve1)) * timeElapsed;\n+            /// AssignmentMutation(`uint(UQ112x112.encode(_reserve0).uqdiv(_reserve1)) * timeElapsed` |==> `1`) of: `price1CumulativeLast += uint(UQ112x112.encode(_reserve0).uqdiv(_reserve1)) * timeElapsed;`\n+            price1CumulativeLast += 1;\n         }\n         reserve0 = uint112(balance0);\n         reserve1 = uint112(balance1);\n",
+                "description": "AssignmentMutation",
+                "name": "19_UniswapV2Pair"
+            },
+            "link": "https://prover.certora.com/jobStatus/604718/ffcdd0ff52d14b3597f17ad1982fc7b7?anonymousKey=7dff6b3ee9868a825b807e30540d1ee9a06a5018",
+            "success": true,
+            "run_directory": ".certora_internal/24_11_28_19_44_57_684/.certora_sources",
+            "rule_report_link": "https://prover.certora.com/output/604718/ffcdd0ff52d14b3597f17ad1982fc7b7?anonymousKey=7dff6b3ee9868a825b807e30540d1ee9a06a5018"
+        },
+        {
+            "gambit_mutant": {
+                "filename": "gambit_out/mutants/20/contracts/UniswapV2Pair.sol",
+                "original_filename": "contracts/UniswapV2Pair.sol",
+                "directory": "gambit_out/mutants/20",
+                "id": "20",
+                "diff": "--- original\n+++ mutant\n@@ -77,7 +77,8 @@\n         if (timeElapsed > 0 && _reserve0 != 0 && _reserve1 != 0) {\n             // * never overflows, and + overflow is desired\n             price0CumulativeLast += uint(UQ112x112.encode(_reserve1).uqdiv(_reserve0)) * timeElapsed;\n-            price1CumulativeLast += uint(UQ112x112.encode(_reserve0).uqdiv(_reserve1)) * timeElapsed;\n+            /// BinaryOpMutation(`*` |==> `-`) of: `price1CumulativeLast += uint(UQ112x112.encode(_reserve0).uqdiv(_reserve1)) * timeElapsed;`\n+            price1CumulativeLast += uint(UQ112x112.encode(_reserve0).uqdiv(_reserve1))-timeElapsed;\n         }\n         reserve0 = uint112(balance0);\n         reserve1 = uint112(balance1);\n",
+                "description": "BinaryOpMutation",
+                "name": "20_UniswapV2Pair"
+            },
+            "link": "https://prover.certora.com/jobStatus/604718/e25715b27245463588869ab6bcbd7bd4?anonymousKey=ef74259f004734de24aba923789fdb442a927e55",
+            "success": true,
+            "run_directory": ".certora_internal/24_11_28_19_45_13_168/.certora_sources",
+            "rule_report_link": "https://prover.certora.com/output/604718/e25715b27245463588869ab6bcbd7bd4?anonymousKey=ef74259f004734de24aba923789fdb442a927e55"
+        },
+        {
+            "gambit_mutant": {
+                "filename": "gambit_out/mutants/21/contracts/UniswapV2Pair.sol",
+                "original_filename": "contracts/UniswapV2Pair.sol",
+                "directory": "gambit_out/mutants/21",
+                "id": "21",
+                "diff": "--- original\n+++ mutant\n@@ -77,7 +77,8 @@\n         if (timeElapsed > 0 && _reserve0 != 0 && _reserve1 != 0) {\n             // * never overflows, and + overflow is desired\n             price0CumulativeLast += uint(UQ112x112.encode(_reserve1).uqdiv(_reserve0)) * timeElapsed;\n-            price1CumulativeLast += uint(UQ112x112.encode(_reserve0).uqdiv(_reserve1)) * timeElapsed;\n+            /// BinaryOpMutation(`*` |==> `%`) of: `price1CumulativeLast += uint(UQ112x112.encode(_reserve0).uqdiv(_reserve1)) * timeElapsed;`\n+            price1CumulativeLast += uint(UQ112x112.encode(_reserve0).uqdiv(_reserve1))%timeElapsed;\n         }\n         reserve0 = uint112(balance0);\n         reserve1 = uint112(balance1);\n",
+                "description": "BinaryOpMutation",
+                "name": "21_UniswapV2Pair"
+            },
+            "link": "https://prover.certora.com/jobStatus/604718/b347ba2e96a24bdea4e480172ea53661?anonymousKey=3b341faddf927f6bfd4e08b16da3c28d624ca15f",
+            "success": true,
+            "run_directory": ".certora_internal/24_11_28_19_45_25_584/.certora_sources",
+            "rule_report_link": "https://prover.certora.com/output/604718/b347ba2e96a24bdea4e480172ea53661?anonymousKey=3b341faddf927f6bfd4e08b16da3c28d624ca15f"
+        },
+        {
+            "gambit_mutant": {
+                "filename": "gambit_out/mutants/22/contracts/UniswapV2Pair.sol",
+                "original_filename": "contracts/UniswapV2Pair.sol",
+                "directory": "gambit_out/mutants/22",
+                "id": "22",
+                "diff": "--- original\n+++ mutant\n@@ -79,7 +79,8 @@\n             price0CumulativeLast += uint(UQ112x112.encode(_reserve1).uqdiv(_reserve0)) * timeElapsed;\n             price1CumulativeLast += uint(UQ112x112.encode(_reserve0).uqdiv(_reserve1)) * timeElapsed;\n         }\n-        reserve0 = uint112(balance0);\n+        /// DeleteExpressionMutation(`reserve0 = uint112(balance0)` |==> `assert(true)`) of: `reserve0 = uint112(balance0);`\n+        assert(true);\n         reserve1 = uint112(balance1);\n         blockTimestampLast = blockTimestamp;\n         emit Sync(reserve0, reserve1);\n",
+                "description": "DeleteExpressionMutation",
+                "name": "22_UniswapV2Pair"
+            },
+            "link": "https://prover.certora.com/jobStatus/604718/5c3a9d5659e849a2a245a62535c5dbe2?anonymousKey=24dcaa0c97b3dc748c69217a0b046adab64d8dac",
+            "success": true,
+            "run_directory": ".certora_internal/24_11_28_19_44_57_708/.certora_sources",
+            "rule_report_link": "https://prover.certora.com/output/604718/5c3a9d5659e849a2a245a62535c5dbe2?anonymousKey=24dcaa0c97b3dc748c69217a0b046adab64d8dac"
+        },
+        {
+            "gambit_mutant": {
+                "filename": "gambit_out/mutants/23/contracts/UniswapV2Pair.sol",
+                "original_filename": "contracts/UniswapV2Pair.sol",
+                "directory": "gambit_out/mutants/23",
+                "id": "23",
+                "diff": "--- original\n+++ mutant\n@@ -79,7 +79,8 @@\n             price0CumulativeLast += uint(UQ112x112.encode(_reserve1).uqdiv(_reserve0)) * timeElapsed;\n             price1CumulativeLast += uint(UQ112x112.encode(_reserve0).uqdiv(_reserve1)) * timeElapsed;\n         }\n-        reserve0 = uint112(balance0);\n+        /// AssignmentMutation(`uint112(balance0)` |==> `0`) of: `reserve0 = uint112(balance0);`\n+        reserve0 = 0;\n         reserve1 = uint112(balance1);\n         blockTimestampLast = blockTimestamp;\n         emit Sync(reserve0, reserve1);\n",
+                "description": "AssignmentMutation",
+                "name": "23_UniswapV2Pair"
+            },
+            "link": "https://prover.certora.com/jobStatus/604718/1c97eaea01fc4bc28fde415dbf22f458?anonymousKey=15f3a912fad575d67088378c03218dbadff10fe4",
+            "success": true,
+            "run_directory": ".certora_internal/24_11_28_19_45_09_745/.certora_sources",
+            "rule_report_link": "https://prover.certora.com/output/604718/1c97eaea01fc4bc28fde415dbf22f458?anonymousKey=15f3a912fad575d67088378c03218dbadff10fe4"
+        },
+        {
+            "gambit_mutant": {
+                "filename": "gambit_out/mutants/24/contracts/UniswapV2Pair.sol",
+                "original_filename": "contracts/UniswapV2Pair.sol",
+                "directory": "gambit_out/mutants/24",
+                "id": "24",
+                "diff": "--- original\n+++ mutant\n@@ -79,7 +79,8 @@\n             price0CumulativeLast += uint(UQ112x112.encode(_reserve1).uqdiv(_reserve0)) * timeElapsed;\n             price1CumulativeLast += uint(UQ112x112.encode(_reserve0).uqdiv(_reserve1)) * timeElapsed;\n         }\n-        reserve0 = uint112(balance0);\n+        /// AssignmentMutation(`uint112(balance0)` |==> `1`) of: `reserve0 = uint112(balance0);`\n+        reserve0 = 1;\n         reserve1 = uint112(balance1);\n         blockTimestampLast = blockTimestamp;\n         emit Sync(reserve0, reserve1);\n",
+                "description": "AssignmentMutation",
+                "name": "24_UniswapV2Pair"
+            },
+            "link": "https://prover.certora.com/jobStatus/604718/c9537bbbc9614d37bd4c8963cf68d6e8?anonymousKey=4de3f396f62299d6a44005637556b080cbf3f8ac",
+            "success": true,
+            "run_directory": ".certora_internal/24_11_28_19_45_20_785/.certora_sources",
+            "rule_report_link": "https://prover.certora.com/output/604718/c9537bbbc9614d37bd4c8963cf68d6e8?anonymousKey=4de3f396f62299d6a44005637556b080cbf3f8ac"
+        },
+        {
+            "gambit_mutant": {
+                "filename": "gambit_out/mutants/25/contracts/UniswapV2Pair.sol",
+                "original_filename": "contracts/UniswapV2Pair.sol",
+                "directory": "gambit_out/mutants/25",
+                "id": "25",
+                "diff": "--- original\n+++ mutant\n@@ -80,7 +80,8 @@\n             price1CumulativeLast += uint(UQ112x112.encode(_reserve0).uqdiv(_reserve1)) * timeElapsed;\n         }\n         reserve0 = uint112(balance0);\n-        reserve1 = uint112(balance1);\n+        /// DeleteExpressionMutation(`reserve1 = uint112(balance1)` |==> `assert(true)`) of: `reserve1 = uint112(balance1);`\n+        assert(true);\n         blockTimestampLast = blockTimestamp;\n         emit Sync(reserve0, reserve1);\n     }\n",
+                "description": "DeleteExpressionMutation",
+                "name": "25_UniswapV2Pair"
+            },
+            "link": "https://prover.certora.com/jobStatus/604718/564d18fee03f47ffa70f23fa2b130698?anonymousKey=532b50e054523f55c9c058ad452346d9b27ccf7e",
+            "success": true,
+            "run_directory": ".certora_internal/24_11_28_19_45_32_099/.certora_sources",
+            "rule_report_link": "https://prover.certora.com/output/604718/564d18fee03f47ffa70f23fa2b130698?anonymousKey=532b50e054523f55c9c058ad452346d9b27ccf7e"
+        },
+        {
+            "gambit_mutant": {
+                "filename": "gambit_out/mutants/26/contracts/UniswapV2Pair.sol",
+                "original_filename": "contracts/UniswapV2Pair.sol",
+                "directory": "gambit_out/mutants/26",
+                "id": "26",
+                "diff": "--- original\n+++ mutant\n@@ -88,7 +88,8 @@\n     // if fee is on, mint liquidity equivalent to 1/6th of the growth in sqrt(k)\n     function _mintFee(uint112 _reserve0, uint112 _reserve1) private returns (bool feeOn) {\n         address feeTo = IUniswapV2Factory(factory).feeTo();\n-        feeOn = feeTo != address(0);\n+        /// DeleteExpressionMutation(`feeOn = feeTo != address(0)` |==> `assert(true)`) of: `feeOn = feeTo != address(0);`\n+        assert(true);\n         uint _kLast = kLast; // gas savings\n         if (feeOn) {\n             if (_kLast != 0) {\n",
+                "description": "DeleteExpressionMutation",
+                "name": "26_UniswapV2Pair"
+            },
+            "link": "https://prover.certora.com/jobStatus/604718/4da9634015f54502b3d88e38e93a70bb?anonymousKey=16544a8450245a0377e52732cf40df73ba1eef4f",
+            "success": true,
+            "run_directory": ".certora_internal/24_11_28_19_45_44_620/.certora_sources",
+            "rule_report_link": "https://prover.certora.com/output/604718/4da9634015f54502b3d88e38e93a70bb?anonymousKey=16544a8450245a0377e52732cf40df73ba1eef4f"
+        },
+        {
+            "gambit_mutant": {
+                "filename": "gambit_out/mutants/27/contracts/UniswapV2Pair.sol",
+                "original_filename": "contracts/UniswapV2Pair.sol",
+                "directory": "gambit_out/mutants/27",
+                "id": "27",
+                "diff": "--- original\n+++ mutant\n@@ -88,7 +88,8 @@\n     // if fee is on, mint liquidity equivalent to 1/6th of the growth in sqrt(k)\n     function _mintFee(uint112 _reserve0, uint112 _reserve1) private returns (bool feeOn) {\n         address feeTo = IUniswapV2Factory(factory).feeTo();\n-        feeOn = feeTo != address(0);\n+        /// AssignmentMutation(`feeTo != address(0)` |==> `true`) of: `feeOn = feeTo != address(0);`\n+        feeOn = true;\n         uint _kLast = kLast; // gas savings\n         if (feeOn) {\n             if (_kLast != 0) {\n",
+                "description": "AssignmentMutation",
+                "name": "27_UniswapV2Pair"
+            },
+            "link": "https://prover.certora.com/jobStatus/604718/92daf9e5a43a41a9bd051a77deedd3e2?anonymousKey=d326f0bc5ba620d28f2713be3f768a4d8c22cd6b",
+            "success": true,
+            "run_directory": ".certora_internal/24_11_28_19_45_58_620/.certora_sources",
+            "rule_report_link": "https://prover.certora.com/output/604718/92daf9e5a43a41a9bd051a77deedd3e2?anonymousKey=d326f0bc5ba620d28f2713be3f768a4d8c22cd6b"
+        },
+        {
+            "gambit_mutant": {
+                "filename": "gambit_out/mutants/28/contracts/UniswapV2Pair.sol",
+                "original_filename": "contracts/UniswapV2Pair.sol",
+                "directory": "gambit_out/mutants/28",
+                "id": "28",
+                "diff": "--- original\n+++ mutant\n@@ -88,7 +88,8 @@\n     // if fee is on, mint liquidity equivalent to 1/6th of the growth in sqrt(k)\n     function _mintFee(uint112 _reserve0, uint112 _reserve1) private returns (bool feeOn) {\n         address feeTo = IUniswapV2Factory(factory).feeTo();\n-        feeOn = feeTo != address(0);\n+        /// AssignmentMutation(`feeTo != address(0)` |==> `false`) of: `feeOn = feeTo != address(0);`\n+        feeOn = false;\n         uint _kLast = kLast; // gas savings\n         if (feeOn) {\n             if (_kLast != 0) {\n",
+                "description": "AssignmentMutation",
+                "name": "28_UniswapV2Pair"
+            },
+            "link": "https://prover.certora.com/jobStatus/604718/6dc965c193ae45159adc05cc5db41451?anonymousKey=b174ce7d5f433a0f015529f6b7c8ebef23a38ccc",
+            "success": true,
+            "run_directory": ".certora_internal/24_11_28_19_45_32_935/.certora_sources",
+            "rule_report_link": "https://prover.certora.com/output/604718/6dc965c193ae45159adc05cc5db41451?anonymousKey=b174ce7d5f433a0f015529f6b7c8ebef23a38ccc"
+        },
+        {
+            "gambit_mutant": {
+                "filename": "gambit_out/mutants/29/contracts/UniswapV2Pair.sol",
+                "original_filename": "contracts/UniswapV2Pair.sol",
+                "directory": "gambit_out/mutants/29",
+                "id": "29",
+                "diff": "--- original\n+++ mutant\n@@ -90,7 +90,8 @@\n         address feeTo = IUniswapV2Factory(factory).feeTo();\n         feeOn = feeTo != address(0);\n         uint _kLast = kLast; // gas savings\n-        if (feeOn) {\n+        /// IfStatementMutation(`feeOn` |==> `true`) of: `if (feeOn) {`\n+        if (true) {\n             if (_kLast != 0) {\n                 uint rootK = Math.sqrt(uint(_reserve0).mul(_reserve1));\n                 uint rootKLast = Math.sqrt(_kLast);\n",
+                "description": "IfStatementMutation",
+                "name": "29_UniswapV2Pair"
+            },
+            "link": "https://prover.certora.com/jobStatus/604718/3dcc1db833774758a6a4644b2b984e50?anonymousKey=3909c7b6541c91edb9b031962ec89b973aed90b9",
+            "success": true,
+            "run_directory": ".certora_internal/24_11_28_19_45_44_523/.certora_sources",
+            "rule_report_link": "https://prover.certora.com/output/604718/3dcc1db833774758a6a4644b2b984e50?anonymousKey=3909c7b6541c91edb9b031962ec89b973aed90b9"
+        },
+        {
+            "gambit_mutant": {
+                "filename": "gambit_out/mutants/30/contracts/UniswapV2Pair.sol",
+                "original_filename": "contracts/UniswapV2Pair.sol",
+                "directory": "gambit_out/mutants/30",
+                "id": "30",
+                "diff": "--- original\n+++ mutant\n@@ -90,7 +90,8 @@\n         address feeTo = IUniswapV2Factory(factory).feeTo();\n         feeOn = feeTo != address(0);\n         uint _kLast = kLast; // gas savings\n-        if (feeOn) {\n+        /// IfStatementMutation(`feeOn` |==> `false`) of: `if (feeOn) {`\n+        if (false) {\n             if (_kLast != 0) {\n                 uint rootK = Math.sqrt(uint(_reserve0).mul(_reserve1));\n                 uint rootKLast = Math.sqrt(_kLast);\n",
+                "description": "IfStatementMutation",
+                "name": "30_UniswapV2Pair"
+            },
+            "link": "https://prover.certora.com/jobStatus/604718/97b435b0130b4fcc82b90a5693b355ce?anonymousKey=19afa1ee54918bbe56d1deb96dbfdb7d602adf7e",
+            "success": true,
+            "run_directory": ".certora_internal/24_11_28_19_45_56_070/.certora_sources",
+            "rule_report_link": "https://prover.certora.com/output/604718/97b435b0130b4fcc82b90a5693b355ce?anonymousKey=19afa1ee54918bbe56d1deb96dbfdb7d602adf7e"
+        },
+        {
+            "gambit_mutant": {
+                "filename": "gambit_out/mutants/31/contracts/UniswapV2Pair.sol",
+                "original_filename": "contracts/UniswapV2Pair.sol",
+                "directory": "gambit_out/mutants/31",
+                "id": "31",
+                "diff": "--- original\n+++ mutant\n@@ -101,7 +101,8 @@\n                     if (liquidity > 0) _mint(feeTo, liquidity);\n                 }\n             }\n-        } else if (_kLast != 0) {\n+        /// IfStatementMutation(`_kLast != 0` |==> `true`) of: `} else if (_kLast != 0) {`\n+        } else if (true) {\n             kLast = 0;\n         }\n     }\n",
+                "description": "IfStatementMutation",
+                "name": "31_UniswapV2Pair"
+            },
+            "link": "https://prover.certora.com/jobStatus/604718/240f96c2b40f41bd8ef706e0afcb465b?anonymousKey=23ee7e6c411960510aa01857f5388a51e5bfaddf",
+            "success": true,
+            "run_directory": ".certora_internal/24_11_28_19_45_34_768/.certora_sources",
+            "rule_report_link": "https://prover.certora.com/output/604718/240f96c2b40f41bd8ef706e0afcb465b?anonymousKey=23ee7e6c411960510aa01857f5388a51e5bfaddf"
+        },
+        {
+            "gambit_mutant": {
+                "filename": "gambit_out/mutants/32/contracts/UniswapV2Pair.sol",
+                "original_filename": "contracts/UniswapV2Pair.sol",
+                "directory": "gambit_out/mutants/32",
+                "id": "32",
+                "diff": "--- original\n+++ mutant\n@@ -91,7 +91,8 @@\n         feeOn = feeTo != address(0);\n         uint _kLast = kLast; // gas savings\n         if (feeOn) {\n-            if (_kLast != 0) {\n+            /// IfStatementMutation(`_kLast != 0` |==> `true`) of: `if (_kLast != 0) {`\n+            if (true) {\n                 uint rootK = Math.sqrt(uint(_reserve0).mul(_reserve1));\n                 uint rootKLast = Math.sqrt(_kLast);\n                 if (rootK > rootKLast) {\n",
+                "description": "IfStatementMutation",
+                "name": "32_UniswapV2Pair"
+            },
+            "link": "https://prover.certora.com/jobStatus/604718/eca92e93c1714f3a8c1ab6e220b800e6?anonymousKey=fb6dbd49df0058c7163e6b46481bdbdfae64afa1",
+            "success": true,
+            "run_directory": ".certora_internal/24_11_28_19_45_45_296/.certora_sources",
+            "rule_report_link": "https://prover.certora.com/output/604718/eca92e93c1714f3a8c1ab6e220b800e6?anonymousKey=fb6dbd49df0058c7163e6b46481bdbdfae64afa1"
+        },
+        {
+            "gambit_mutant": {
+                "filename": "gambit_out/mutants/33/contracts/UniswapV2Pair.sol",
+                "original_filename": "contracts/UniswapV2Pair.sol",
+                "directory": "gambit_out/mutants/33",
+                "id": "33",
+                "diff": "--- original\n+++ mutant\n@@ -91,7 +91,8 @@\n         feeOn = feeTo != address(0);\n         uint _kLast = kLast; // gas savings\n         if (feeOn) {\n-            if (_kLast != 0) {\n+            /// IfStatementMutation(`_kLast != 0` |==> `false`) of: `if (_kLast != 0) {`\n+            if (false) {\n                 uint rootK = Math.sqrt(uint(_reserve0).mul(_reserve1));\n                 uint rootKLast = Math.sqrt(_kLast);\n                 if (rootK > rootKLast) {\n",
+                "description": "IfStatementMutation",
+                "name": "33_UniswapV2Pair"
+            },
+            "link": "https://prover.certora.com/jobStatus/604718/961efb41f48f43c18a78665ae89b72a5?anonymousKey=8cbe8c4349cb177d47d43292dec0d50a031c82cf",
+            "success": true,
+            "run_directory": ".certora_internal/24_11_28_19_45_58_802/.certora_sources",
+            "rule_report_link": "https://prover.certora.com/output/604718/961efb41f48f43c18a78665ae89b72a5?anonymousKey=8cbe8c4349cb177d47d43292dec0d50a031c82cf"
+        },
+        {
+            "gambit_mutant": {
+                "filename": "gambit_out/mutants/34/contracts/UniswapV2Pair.sol",
+                "original_filename": "contracts/UniswapV2Pair.sol",
+                "directory": "gambit_out/mutants/34",
+                "id": "34",
+                "diff": "--- original\n+++ mutant\n@@ -97,7 +97,8 @@\n                 if (rootK > rootKLast) {\n                     uint numerator = totalSupply.mul(rootK.sub(rootKLast));\n                     uint denominator = rootK.mul(5).add(rootKLast);\n-                    uint liquidity = numerator / denominator;\n+                    /// BinaryOpMutation(`/` |==> `%`) of: `uint liquidity = numerator / denominator;`\n+                    uint liquidity = numerator%denominator;\n                     if (liquidity > 0) _mint(feeTo, liquidity);\n                 }\n             }\n",
+                "description": "BinaryOpMutation",
+                "name": "34_UniswapV2Pair"
+            },
+            "link": "https://prover.certora.com/jobStatus/604718/0151780ae68e4c77a4bb891475645b38?anonymousKey=ecdde86de95706a59ae329e4746748386cd19dcf",
+            "success": true,
+            "run_directory": ".certora_internal/24_11_28_19_45_36_783/.certora_sources",
+            "rule_report_link": "https://prover.certora.com/output/604718/0151780ae68e4c77a4bb891475645b38?anonymousKey=ecdde86de95706a59ae329e4746748386cd19dcf"
+        },
+        {
+            "gambit_mutant": {
+                "filename": "gambit_out/mutants/35/contracts/UniswapV2Pair.sol",
+                "original_filename": "contracts/UniswapV2Pair.sol",
+                "directory": "gambit_out/mutants/35",
+                "id": "35",
+                "diff": "--- original\n+++ mutant\n@@ -97,7 +97,8 @@\n                 if (rootK > rootKLast) {\n                     uint numerator = totalSupply.mul(rootK.sub(rootKLast));\n                     uint denominator = rootK.mul(5).add(rootKLast);\n-                    uint liquidity = numerator / denominator;\n+                    /// BinaryOpMutation(`/` |==> `**`) of: `uint liquidity = numerator / denominator;`\n+                    uint liquidity = numerator**denominator;\n                     if (liquidity > 0) _mint(feeTo, liquidity);\n                 }\n             }\n",
+                "description": "BinaryOpMutation",
+                "name": "35_UniswapV2Pair"
+            },
+            "link": "https://prover.certora.com/jobStatus/604718/cb0bd8c531624daea506e9c97f76be70?anonymousKey=b62a9c9af242e21ec703d4d97b18128f0e6925ff",
+            "success": true,
+            "run_directory": ".certora_internal/24_11_28_19_45_46_260/.certora_sources",
+            "rule_report_link": "https://prover.certora.com/output/604718/cb0bd8c531624daea506e9c97f76be70?anonymousKey=b62a9c9af242e21ec703d4d97b18128f0e6925ff"
+        },
+        {
+            "gambit_mutant": {
+                "filename": "gambit_out/mutants/36/contracts/UniswapV2Pair.sol",
+                "original_filename": "contracts/UniswapV2Pair.sol",
+                "directory": "gambit_out/mutants/36",
+                "id": "36",
+                "diff": "--- original\n+++ mutant\n@@ -97,7 +97,8 @@\n                 if (rootK > rootKLast) {\n                     uint numerator = totalSupply.mul(rootK.sub(rootKLast));\n                     uint denominator = rootK.mul(5).add(rootKLast);\n-                    uint liquidity = numerator / denominator;\n+                    /// SwapArgumentsOperatorMutation(`numerator / denominator` |==> `denominator / numerator`) of: `uint liquidity = numerator / denominator;`\n+                    uint liquidity = denominator / numerator;\n                     if (liquidity > 0) _mint(feeTo, liquidity);\n                 }\n             }\n",
+                "description": "SwapArgumentsOperatorMutation",
+                "name": "36_UniswapV2Pair"
+            },
+            "link": "https://prover.certora.com/jobStatus/604718/07662a25fc434bd6a5bd892b53e234e1?anonymousKey=a5d5f3352e5f11dfb71198210c4da82ecafcde1f",
+            "success": true,
+            "run_directory": ".certora_internal/24_11_28_19_46_00_718/.certora_sources",
+            "rule_report_link": "https://prover.certora.com/output/604718/07662a25fc434bd6a5bd892b53e234e1?anonymousKey=a5d5f3352e5f11dfb71198210c4da82ecafcde1f"
+        },
+        {
+            "gambit_mutant": {
+                "filename": "gambit_out/mutants/37/contracts/UniswapV2Pair.sol",
+                "original_filename": "contracts/UniswapV2Pair.sol",
+                "directory": "gambit_out/mutants/37",
+                "id": "37",
+                "diff": "--- original\n+++ mutant\n@@ -98,7 +98,8 @@\n                     uint numerator = totalSupply.mul(rootK.sub(rootKLast));\n                     uint denominator = rootK.mul(5).add(rootKLast);\n                     uint liquidity = numerator / denominator;\n-                    if (liquidity > 0) _mint(feeTo, liquidity);\n+                    /// IfStatementMutation(`liquidity > 0` |==> `false`) of: `if (liquidity > 0) _mint(feeTo, liquidity);`\n+                    if (false) _mint(feeTo, liquidity);\n                 }\n             }\n         } else if (_kLast != 0) {\n",
+                "description": "IfStatementMutation",
+                "name": "37_UniswapV2Pair"
+            },
+            "link": "https://prover.certora.com/jobStatus/604718/9f33fbadc405401a886d4bb3324b209d?anonymousKey=7022c536a263960d18d5f9aab20b804e3db34b58",
+            "success": true,
+            "run_directory": ".certora_internal/24_11_28_19_45_40_229/.certora_sources",
+            "rule_report_link": "https://prover.certora.com/output/604718/9f33fbadc405401a886d4bb3324b209d?anonymousKey=7022c536a263960d18d5f9aab20b804e3db34b58"
+        },
+        {
+            "gambit_mutant": {
+                "filename": "gambit_out/mutants/38/contracts/UniswapV2Pair.sol",
+                "original_filename": "contracts/UniswapV2Pair.sol",
+                "directory": "gambit_out/mutants/38",
+                "id": "38",
+                "diff": "--- original\n+++ mutant\n@@ -116,7 +116,8 @@\n \n         bool feeOn = _mintFee(_reserve0, _reserve1);\n         uint _totalSupply = totalSupply; // gas savings, must be defined here since totalSupply can update in _mintFee\n-        if (_totalSupply == 0) {\n+        /// IfStatementMutation(`_totalSupply == 0` |==> `true`) of: `if (_totalSupply == 0) {`\n+        if (true) {\n             liquidity = Math.sqrt(amount0.mul(amount1)).sub(MINIMUM_LIQUIDITY);\n            _mint(address(0), MINIMUM_LIQUIDITY); // permanently lock the first MINIMUM_LIQUIDITY tokens\n         } else {\n",
+                "description": "IfStatementMutation",
+                "name": "38_UniswapV2Pair"
+            },
+            "link": "https://prover.certora.com/jobStatus/604718/7cefa82e277b4e1283addfdcfb16171e?anonymousKey=1ff16a489b3a1be4d7518599f05d482988acb384",
+            "success": true,
+            "run_directory": ".certora_internal/24_11_28_19_45_50_861/.certora_sources",
+            "rule_report_link": "https://prover.certora.com/output/604718/7cefa82e277b4e1283addfdcfb16171e?anonymousKey=1ff16a489b3a1be4d7518599f05d482988acb384"
+        },
+        {
+            "gambit_mutant": {
+                "filename": "gambit_out/mutants/39/contracts/UniswapV2Pair.sol",
+                "original_filename": "contracts/UniswapV2Pair.sol",
+                "directory": "gambit_out/mutants/39",
+                "id": "39",
+                "diff": "--- original\n+++ mutant\n@@ -120,7 +120,8 @@\n             liquidity = Math.sqrt(amount0.mul(amount1)).sub(MINIMUM_LIQUIDITY);\n            _mint(address(0), MINIMUM_LIQUIDITY); // permanently lock the first MINIMUM_LIQUIDITY tokens\n         } else {\n-            liquidity = Math.min(amount0.mul(_totalSupply) / _reserve0, amount1.mul(_totalSupply) / _reserve1);\n+            /// AssignmentMutation(`Math.min(amount0.mul(_totalSupply) / _reserve0, amount1.mul(_totalSupply) / _reserve1)` |==> `0`) of: `liquidity = Math.min(amount0.mul(_totalSupply) / _reserve0, amount1.mul(_totalSupply) / _reserve1);`\n+            liquidity = 0;\n         }\n         require(liquidity > 0, 'UniswapV2: INSUFFICIENT_LIQUIDITY_MINTED');\n         _mint(to, liquidity);\n",
+                "description": "AssignmentMutation",
+                "name": "39_UniswapV2Pair"
+            },
+            "link": "https://prover.certora.com/jobStatus/604718/6f504e6458064695a95d410b01e2ae0e?anonymousKey=bed77abbc53b1dc089fd027c28e124478560c380",
+            "success": true,
+            "run_directory": ".certora_internal/24_11_28_19_46_00_761/.certora_sources",
+            "rule_report_link": "https://prover.certora.com/output/604718/6f504e6458064695a95d410b01e2ae0e?anonymousKey=bed77abbc53b1dc089fd027c28e124478560c380"
+        },
+        {
+            "gambit_mutant": {
+                "filename": "gambit_out/mutants/40/contracts/UniswapV2Pair.sol",
+                "original_filename": "contracts/UniswapV2Pair.sol",
+                "directory": "gambit_out/mutants/40",
+                "id": "40",
+                "diff": "--- original\n+++ mutant\n@@ -120,7 +120,8 @@\n             liquidity = Math.sqrt(amount0.mul(amount1)).sub(MINIMUM_LIQUIDITY);\n            _mint(address(0), MINIMUM_LIQUIDITY); // permanently lock the first MINIMUM_LIQUIDITY tokens\n         } else {\n-            liquidity = Math.min(amount0.mul(_totalSupply) / _reserve0, amount1.mul(_totalSupply) / _reserve1);\n+            /// AssignmentMutation(`Math.min(amount0.mul(_totalSupply) / _reserve0, amount1.mul(_totalSupply) / _reserve1)` |==> `1`) of: `liquidity = Math.min(amount0.mul(_totalSupply) / _reserve0, amount1.mul(_totalSupply) / _reserve1);`\n+            liquidity = 1;\n         }\n         require(liquidity > 0, 'UniswapV2: INSUFFICIENT_LIQUIDITY_MINTED');\n         _mint(to, liquidity);\n",
+                "description": "AssignmentMutation",
+                "name": "40_UniswapV2Pair"
+            },
+            "link": "https://prover.certora.com/jobStatus/604718/04cb4719b79f43bfbcbab49491429670?anonymousKey=f0d1134e092ec691f6bec979be53ee6348da5e2b",
+            "success": true,
+            "run_directory": ".certora_internal/24_11_28_19_45_40_691/.certora_sources",
+            "rule_report_link": "https://prover.certora.com/output/604718/04cb4719b79f43bfbcbab49491429670?anonymousKey=f0d1134e092ec691f6bec979be53ee6348da5e2b"
+        },
+        {
+            "gambit_mutant": {
+                "filename": "gambit_out/mutants/41/contracts/UniswapV2Pair.sol",
+                "original_filename": "contracts/UniswapV2Pair.sol",
+                "directory": "gambit_out/mutants/41",
+                "id": "41",
+                "diff": "--- original\n+++ mutant\n@@ -120,7 +120,8 @@\n             liquidity = Math.sqrt(amount0.mul(amount1)).sub(MINIMUM_LIQUIDITY);\n            _mint(address(0), MINIMUM_LIQUIDITY); // permanently lock the first MINIMUM_LIQUIDITY tokens\n         } else {\n-            liquidity = Math.min(amount0.mul(_totalSupply) / _reserve0, amount1.mul(_totalSupply) / _reserve1);\n+            /// BinaryOpMutation(`/` |==> `%`) of: `liquidity = Math.min(amount0.mul(_totalSupply) / _reserve0, amount1.mul(_totalSupply) / _reserve1);`\n+            liquidity = Math.min(amount0.mul(_totalSupply) / _reserve0, amount1.mul(_totalSupply)%_reserve1);\n         }\n         require(liquidity > 0, 'UniswapV2: INSUFFICIENT_LIQUIDITY_MINTED');\n         _mint(to, liquidity);\n",
+                "description": "BinaryOpMutation",
+                "name": "41_UniswapV2Pair"
+            },
+            "link": "https://prover.certora.com/jobStatus/604718/2b8688c795aa49f0a42512d0097b4aaa?anonymousKey=4562007a8af4cc4a228d85ffcdcef68ad6f2a7c9",
+            "success": true,
+            "run_directory": ".certora_internal/24_11_28_19_45_58_737/.certora_sources",
+            "rule_report_link": "https://prover.certora.com/output/604718/2b8688c795aa49f0a42512d0097b4aaa?anonymousKey=4562007a8af4cc4a228d85ffcdcef68ad6f2a7c9"
+        },
+        {
+            "gambit_mutant": {
+                "filename": "gambit_out/mutants/42/contracts/UniswapV2Pair.sol",
+                "original_filename": "contracts/UniswapV2Pair.sol",
+                "directory": "gambit_out/mutants/42",
+                "id": "42",
+                "diff": "--- original\n+++ mutant\n@@ -122,7 +122,8 @@\n         } else {\n             liquidity = Math.min(amount0.mul(_totalSupply) / _reserve0, amount1.mul(_totalSupply) / _reserve1);\n         }\n-        require(liquidity > 0, 'UniswapV2: INSUFFICIENT_LIQUIDITY_MINTED');\n+        /// RequireMutation(`liquidity > 0` |==> `true`) of: `require(liquidity > 0, 'UniswapV2: INSUFFICIENT_LIQUIDITY_MINTED');`\n+        require(true, 'UniswapV2: INSUFFICIENT_LIQUIDITY_MINTED');\n         _mint(to, liquidity);\n \n         _update(balance0, balance1, _reserve0, _reserve1);\n",
+                "description": "RequireMutation",
+                "name": "42_UniswapV2Pair"
+            },
+            "link": "https://prover.certora.com/jobStatus/604718/b0e20abf4629469db17253abb17df03e?anonymousKey=87509b590e6300c1515e2c574eecffba606bdb81",
+            "success": true,
+            "run_directory": ".certora_internal/24_11_28_19_46_10_044/.certora_sources",
+            "rule_report_link": "https://prover.certora.com/output/604718/b0e20abf4629469db17253abb17df03e?anonymousKey=87509b590e6300c1515e2c574eecffba606bdb81"
+        },
+        {
+            "gambit_mutant": {
+                "filename": "gambit_out/mutants/43/contracts/UniswapV2Pair.sol",
+                "original_filename": "contracts/UniswapV2Pair.sol",
+                "directory": "gambit_out/mutants/43",
+                "id": "43",
+                "diff": "--- original\n+++ mutant\n@@ -122,7 +122,8 @@\n         } else {\n             liquidity = Math.min(amount0.mul(_totalSupply) / _reserve0, amount1.mul(_totalSupply) / _reserve1);\n         }\n-        require(liquidity > 0, 'UniswapV2: INSUFFICIENT_LIQUIDITY_MINTED');\n+        /// SwapArgumentsOperatorMutation(`liquidity > 0` |==> `0 > liquidity`) of: `require(liquidity > 0, 'UniswapV2: INSUFFICIENT_LIQUIDITY_MINTED');`\n+        require(0 > liquidity, 'UniswapV2: INSUFFICIENT_LIQUIDITY_MINTED');\n         _mint(to, liquidity);\n \n         _update(balance0, balance1, _reserve0, _reserve1);\n",
+                "description": "SwapArgumentsOperatorMutation",
+                "name": "43_UniswapV2Pair"
+            },
+            "link": "https://prover.certora.com/jobStatus/604718/d07ad42d639e4b33b664235eb22629fd?anonymousKey=f888ab1372dab3f5c4149ea60818e0e1514deab0",
+            "success": true,
+            "run_directory": ".certora_internal/24_11_28_19_45_41_333/.certora_sources",
+            "rule_report_link": "https://prover.certora.com/output/604718/d07ad42d639e4b33b664235eb22629fd?anonymousKey=f888ab1372dab3f5c4149ea60818e0e1514deab0"
+        },
+        {
+            "gambit_mutant": {
+                "filename": "gambit_out/mutants/44/contracts/UniswapV2Pair.sol",
+                "original_filename": "contracts/UniswapV2Pair.sol",
+                "directory": "gambit_out/mutants/44",
+                "id": "44",
+                "diff": "--- original\n+++ mutant\n@@ -125,7 +125,8 @@\n         require(liquidity > 0, 'UniswapV2: INSUFFICIENT_LIQUIDITY_MINTED');\n         _mint(to, liquidity);\n \n-        _update(balance0, balance1, _reserve0, _reserve1);\n+        /// DeleteExpressionMutation(`_update(balance0, balance1, _reserve0, _reserve1)` |==> `assert(true)`) of: `_update(balance0, balance1, _reserve0, _reserve1);`\n+        assert(true);\n         if (feeOn) kLast = uint(reserve0).mul(reserve1); // reserve0 and reserve1 are up-to-date\n         emit Mint(msg.sender, amount0, amount1);\n     }\n",
+                "description": "DeleteExpressionMutation",
+                "name": "44_UniswapV2Pair"
+            },
+            "link": "https://prover.certora.com/jobStatus/604718/9f5b3b15b61e49f4be2630e6d4de40e4?anonymousKey=d56b44cb0b543d788d2843db01d49bc5e7e13479",
+            "success": true,
+            "run_directory": ".certora_internal/24_11_28_19_45_53_781/.certora_sources",
+            "rule_report_link": "https://prover.certora.com/output/604718/9f5b3b15b61e49f4be2630e6d4de40e4?anonymousKey=d56b44cb0b543d788d2843db01d49bc5e7e13479"
+        },
+        {
+            "gambit_mutant": {
+                "filename": "gambit_out/mutants/45/contracts/UniswapV2Pair.sol",
+                "original_filename": "contracts/UniswapV2Pair.sol",
+                "directory": "gambit_out/mutants/45",
+                "id": "45",
+                "diff": "--- original\n+++ mutant\n@@ -141,7 +141,8 @@\n \n         bool feeOn = _mintFee(_reserve0, _reserve1);\n         uint _totalSupply = totalSupply; // gas savings, must be defined here since totalSupply can update in _mintFee\n-        amount0 = liquidity.mul(balance0) / _totalSupply; // using balances ensures pro-rata distribution\n+        /// BinaryOpMutation(`/` |==> `+`) of: `amount0 = liquidity.mul(balance0) / _totalSupply; // using balances ensures pro-rata distribution`\n+        amount0 = liquidity.mul(balance0)+_totalSupply; // using balances ensures pro-rata distribution\n         amount1 = liquidity.mul(balance1) / _totalSupply; // using balances ensures pro-rata distribution\n         require(amount0 > 0 && amount1 > 0, 'UniswapV2: INSUFFICIENT_LIQUIDITY_BURNED');\n         _burn(address(this), liquidity);\n",
+                "description": "BinaryOpMutation",
+                "name": "45_UniswapV2Pair"
+            },
+            "link": "https://prover.certora.com/jobStatus/604718/3708a20332774098ae42697196e1bc9a?anonymousKey=4aa43025ac59b4d9d58985c2130e77471f25d0fd",
+            "success": true,
+            "run_directory": ".certora_internal/24_11_28_19_46_02_707/.certora_sources",
+            "rule_report_link": "https://prover.certora.com/output/604718/3708a20332774098ae42697196e1bc9a?anonymousKey=4aa43025ac59b4d9d58985c2130e77471f25d0fd"
+        },
+        {
+            "gambit_mutant": {
+                "filename": "gambit_out/mutants/46/contracts/UniswapV2Pair.sol",
+                "original_filename": "contracts/UniswapV2Pair.sol",
+                "directory": "gambit_out/mutants/46",
+                "id": "46",
+                "diff": "--- original\n+++ mutant\n@@ -141,7 +141,8 @@\n \n         bool feeOn = _mintFee(_reserve0, _reserve1);\n         uint _totalSupply = totalSupply; // gas savings, must be defined here since totalSupply can update in _mintFee\n-        amount0 = liquidity.mul(balance0) / _totalSupply; // using balances ensures pro-rata distribution\n+        /// SwapArgumentsOperatorMutation(`liquidity.mul(balance0) / _totalSupply` |==> `_totalSupply / liquidity.mul(balance0)`) of: `amount0 = liquidity.mul(balance0) / _totalSupply; // using balances ensures pro-rata distribution`\n+        amount0 = _totalSupply / liquidity.mul(balance0); // using balances ensures pro-rata distribution\n         amount1 = liquidity.mul(balance1) / _totalSupply; // using balances ensures pro-rata distribution\n         require(amount0 > 0 && amount1 > 0, 'UniswapV2: INSUFFICIENT_LIQUIDITY_BURNED');\n         _burn(address(this), liquidity);\n",
+                "description": "SwapArgumentsOperatorMutation",
+                "name": "46_UniswapV2Pair"
+            },
+            "link": "https://prover.certora.com/jobStatus/604718/e36eaaa0fb814203b2ce07f7e1e110c0?anonymousKey=4fd1f5c59e5ef98849a8e3e54ab946fcbd4084e4",
+            "success": true,
+            "run_directory": ".certora_internal/24_11_28_19_45_42_240/.certora_sources",
+            "rule_report_link": "https://prover.certora.com/output/604718/e36eaaa0fb814203b2ce07f7e1e110c0?anonymousKey=4fd1f5c59e5ef98849a8e3e54ab946fcbd4084e4"
+        },
+        {
+            "gambit_mutant": {
+                "filename": "gambit_out/mutants/47/contracts/UniswapV2Pair.sol",
+                "original_filename": "contracts/UniswapV2Pair.sol",
+                "directory": "gambit_out/mutants/47",
+                "id": "47",
+                "diff": "--- original\n+++ mutant\n@@ -142,7 +142,8 @@\n         bool feeOn = _mintFee(_reserve0, _reserve1);\n         uint _totalSupply = totalSupply; // gas savings, must be defined here since totalSupply can update in _mintFee\n         amount0 = liquidity.mul(balance0) / _totalSupply; // using balances ensures pro-rata distribution\n-        amount1 = liquidity.mul(balance1) / _totalSupply; // using balances ensures pro-rata distribution\n+        /// DeleteExpressionMutation(`amount1 = liquidity.mul(balance1) / _totalSupply` |==> `assert(true)`) of: `amount1 = liquidity.mul(balance1) / _totalSupply; // using balances ensures pro-rata distribution`\n+        assert(true); // using balances ensures pro-rata distribution\n         require(amount0 > 0 && amount1 > 0, 'UniswapV2: INSUFFICIENT_LIQUIDITY_BURNED');\n         _burn(address(this), liquidity);\n         _safeTransfer(_token0, to, amount0);\n",
+                "description": "DeleteExpressionMutation",
+                "name": "47_UniswapV2Pair"
+            },
+            "link": "https://prover.certora.com/jobStatus/604718/5841cb0275244eee9938002d9d71ca64?anonymousKey=f8d0b083236e82ba560eff36de2a3626d3ae58b1",
+            "success": true,
+            "run_directory": ".certora_internal/24_11_28_19_45_54_101/.certora_sources",
+            "rule_report_link": "https://prover.certora.com/output/604718/5841cb0275244eee9938002d9d71ca64?anonymousKey=f8d0b083236e82ba560eff36de2a3626d3ae58b1"
+        },
+        {
+            "gambit_mutant": {
+                "filename": "gambit_out/mutants/48/contracts/UniswapV2Pair.sol",
+                "original_filename": "contracts/UniswapV2Pair.sol",
+                "directory": "gambit_out/mutants/48",
+                "id": "48",
+                "diff": "--- original\n+++ mutant\n@@ -142,7 +142,8 @@\n         bool feeOn = _mintFee(_reserve0, _reserve1);\n         uint _totalSupply = totalSupply; // gas savings, must be defined here since totalSupply can update in _mintFee\n         amount0 = liquidity.mul(balance0) / _totalSupply; // using balances ensures pro-rata distribution\n-        amount1 = liquidity.mul(balance1) / _totalSupply; // using balances ensures pro-rata distribution\n+        /// AssignmentMutation(`liquidity.mul(balance1) / _totalSupply` |==> `1`) of: `amount1 = liquidity.mul(balance1) / _totalSupply; // using balances ensures pro-rata distribution`\n+        amount1 = 1; // using balances ensures pro-rata distribution\n         require(amount0 > 0 && amount1 > 0, 'UniswapV2: INSUFFICIENT_LIQUIDITY_BURNED');\n         _burn(address(this), liquidity);\n         _safeTransfer(_token0, to, amount0);\n",
+                "description": "AssignmentMutation",
+                "name": "48_UniswapV2Pair"
+            },
+            "link": "https://prover.certora.com/jobStatus/604718/5374fa0d2ff847699e2162c625a5a2c5?anonymousKey=f8b4fcdea70b23148c4f35aa9f0b51902f2aafc9",
+            "success": true,
+            "run_directory": ".certora_internal/24_11_28_19_46_05_909/.certora_sources",
+            "rule_report_link": "https://prover.certora.com/output/604718/5374fa0d2ff847699e2162c625a5a2c5?anonymousKey=f8b4fcdea70b23148c4f35aa9f0b51902f2aafc9"
+        },
+        {
+            "gambit_mutant": {
+                "filename": "gambit_out/mutants/49/contracts/UniswapV2Pair.sol",
+                "original_filename": "contracts/UniswapV2Pair.sol",
+                "directory": "gambit_out/mutants/49",
+                "id": "49",
+                "diff": "--- original\n+++ mutant\n@@ -142,7 +142,8 @@\n         bool feeOn = _mintFee(_reserve0, _reserve1);\n         uint _totalSupply = totalSupply; // gas savings, must be defined here since totalSupply can update in _mintFee\n         amount0 = liquidity.mul(balance0) / _totalSupply; // using balances ensures pro-rata distribution\n-        amount1 = liquidity.mul(balance1) / _totalSupply; // using balances ensures pro-rata distribution\n+        /// BinaryOpMutation(`/` |==> `*`) of: `amount1 = liquidity.mul(balance1) / _totalSupply; // using balances ensures pro-rata distribution`\n+        amount1 = liquidity.mul(balance1)*_totalSupply; // using balances ensures pro-rata distribution\n         require(amount0 > 0 && amount1 > 0, 'UniswapV2: INSUFFICIENT_LIQUIDITY_BURNED');\n         _burn(address(this), liquidity);\n         _safeTransfer(_token0, to, amount0);\n",
+                "description": "BinaryOpMutation",
+                "name": "49_UniswapV2Pair"
+            },
+            "link": "https://prover.certora.com/jobStatus/604718/96a3d836132c4cbfb22de4520376e7b0?anonymousKey=4495add6e668dbc509fa5e49c583a256cd3b9baa",
+            "success": true,
+            "run_directory": ".certora_internal/24_11_28_19_46_07_898/.certora_sources",
+            "rule_report_link": "https://prover.certora.com/output/604718/96a3d836132c4cbfb22de4520376e7b0?anonymousKey=4495add6e668dbc509fa5e49c583a256cd3b9baa"
+        },
+        {
+            "gambit_mutant": {
+                "filename": "gambit_out/mutants/50/contracts/UniswapV2Pair.sol",
+                "original_filename": "contracts/UniswapV2Pair.sol",
+                "directory": "gambit_out/mutants/50",
+                "id": "50",
+                "diff": "--- original\n+++ mutant\n@@ -143,7 +143,8 @@\n         uint _totalSupply = totalSupply; // gas savings, must be defined here since totalSupply can update in _mintFee\n         amount0 = liquidity.mul(balance0) / _totalSupply; // using balances ensures pro-rata distribution\n         amount1 = liquidity.mul(balance1) / _totalSupply; // using balances ensures pro-rata distribution\n-        require(amount0 > 0 && amount1 > 0, 'UniswapV2: INSUFFICIENT_LIQUIDITY_BURNED');\n+        /// SwapArgumentsOperatorMutation(`amount0 > 0` |==> `0 > amount0`) of: `require(amount0 > 0 && amount1 > 0, 'UniswapV2: INSUFFICIENT_LIQUIDITY_BURNED');`\n+        require(0 > amount0 && amount1 > 0, 'UniswapV2: INSUFFICIENT_LIQUIDITY_BURNED');\n         _burn(address(this), liquidity);\n         _safeTransfer(_token0, to, amount0);\n         _safeTransfer(_token1, to, amount1);\n",
+                "description": "SwapArgumentsOperatorMutation",
+                "name": "50_UniswapV2Pair"
+            },
+            "link": "https://prover.certora.com/jobStatus/604718/36349a5d8d0d4e4dac0676f32d43cf0b?anonymousKey=51bbed1c2b2487092f4386b9fc8720d69ad3ebad",
+            "success": true,
+            "run_directory": ".certora_internal/24_11_28_19_46_18_054/.certora_sources",
+            "rule_report_link": "https://prover.certora.com/output/604718/36349a5d8d0d4e4dac0676f32d43cf0b?anonymousKey=51bbed1c2b2487092f4386b9fc8720d69ad3ebad"
+        },
+        {
+            "gambit_mutant": {
+                "filename": "gambit_out/mutants/51/contracts/UniswapV2Pair.sol",
+                "original_filename": "contracts/UniswapV2Pair.sol",
+                "directory": "gambit_out/mutants/51",
+                "id": "51",
+                "diff": "--- original\n+++ mutant\n@@ -143,7 +143,8 @@\n         uint _totalSupply = totalSupply; // gas savings, must be defined here since totalSupply can update in _mintFee\n         amount0 = liquidity.mul(balance0) / _totalSupply; // using balances ensures pro-rata distribution\n         amount1 = liquidity.mul(balance1) / _totalSupply; // using balances ensures pro-rata distribution\n-        require(amount0 > 0 && amount1 > 0, 'UniswapV2: INSUFFICIENT_LIQUIDITY_BURNED');\n+        /// SwapArgumentsOperatorMutation(`amount1 > 0` |==> `0 > amount1`) of: `require(amount0 > 0 && amount1 > 0, 'UniswapV2: INSUFFICIENT_LIQUIDITY_BURNED');`\n+        require(amount0 > 0 && 0 > amount1, 'UniswapV2: INSUFFICIENT_LIQUIDITY_BURNED');\n         _burn(address(this), liquidity);\n         _safeTransfer(_token0, to, amount0);\n         _safeTransfer(_token1, to, amount1);\n",
+                "description": "SwapArgumentsOperatorMutation",
+                "name": "51_UniswapV2Pair"
+            },
+            "link": "https://prover.certora.com/jobStatus/604718/e833a54c233e4fbfab54352c85545c68?anonymousKey=9709e5d533194d4043b8e7d19f2354b2654f6870",
+            "success": true,
+            "run_directory": ".certora_internal/24_11_28_19_46_29_901/.certora_sources",
+            "rule_report_link": "https://prover.certora.com/output/604718/e833a54c233e4fbfab54352c85545c68?anonymousKey=9709e5d533194d4043b8e7d19f2354b2654f6870"
+        },
+        {
+            "gambit_mutant": {
+                "filename": "gambit_out/mutants/52/contracts/UniswapV2Pair.sol",
+                "original_filename": "contracts/UniswapV2Pair.sol",
+                "directory": "gambit_out/mutants/52",
+                "id": "52",
+                "diff": "--- original\n+++ mutant\n@@ -146,7 +146,8 @@\n         require(amount0 > 0 && amount1 > 0, 'UniswapV2: INSUFFICIENT_LIQUIDITY_BURNED');\n         _burn(address(this), liquidity);\n         _safeTransfer(_token0, to, amount0);\n-        _safeTransfer(_token1, to, amount1);\n+        /// DeleteExpressionMutation(`_safeTransfer(_token1, to, amount1)` |==> `assert(true)`) of: `_safeTransfer(_token1, to, amount1);`\n+        assert(true);\n         balance0 = IERC20(_token0).balanceOf(address(this));\n         balance1 = IERC20(_token1).balanceOf(address(this));\n \n",
+                "description": "DeleteExpressionMutation",
+                "name": "52_UniswapV2Pair"
+            },
+            "link": "https://prover.certora.com/jobStatus/604718/b25ef34d60c8470d99adb5614d26df62?anonymousKey=79b494a94d162acdf3043d59b5c627daeeb2f628",
+            "success": true,
+            "run_directory": ".certora_internal/24_11_28_19_46_08_264/.certora_sources",
+            "rule_report_link": "https://prover.certora.com/output/604718/b25ef34d60c8470d99adb5614d26df62?anonymousKey=79b494a94d162acdf3043d59b5c627daeeb2f628"
+        },
+        {
+            "gambit_mutant": {
+                "filename": "gambit_out/mutants/53/contracts/UniswapV2Pair.sol",
+                "original_filename": "contracts/UniswapV2Pair.sol",
+                "directory": "gambit_out/mutants/53",
+                "id": "53",
+                "diff": "--- original\n+++ mutant\n@@ -151,7 +151,8 @@\n         balance1 = IERC20(_token1).balanceOf(address(this));\n \n         _update(balance0, balance1, _reserve0, _reserve1);\n-        if (feeOn) kLast = uint(reserve0).mul(reserve1); // reserve0 and reserve1 are up-to-date\n+        /// IfStatementMutation(`feeOn` |==> `false`) of: `if (feeOn) kLast = uint(reserve0).mul(reserve1); // reserve0 and reserve1 are up-to-date`\n+        if (false) kLast = uint(reserve0).mul(reserve1); // reserve0 and reserve1 are up-to-date\n         emit Burn(msg.sender, amount0, amount1, to);\n     }\n \n",
+                "description": "IfStatementMutation",
+                "name": "53_UniswapV2Pair"
+            },
+            "link": "https://prover.certora.com/jobStatus/604718/412169a806dc42e78497aeaa1196b394?anonymousKey=b530b8aebf801c3e6f6532de0ba04577e8d393a0",
+            "success": true,
+            "run_directory": ".certora_internal/24_11_28_19_46_20_056/.certora_sources",
+            "rule_report_link": "https://prover.certora.com/output/604718/412169a806dc42e78497aeaa1196b394?anonymousKey=b530b8aebf801c3e6f6532de0ba04577e8d393a0"
+        },
+        {
+            "gambit_mutant": {
+                "filename": "gambit_out/mutants/54/contracts/UniswapV2Pair.sol",
+                "original_filename": "contracts/UniswapV2Pair.sol",
+                "directory": "gambit_out/mutants/54",
+                "id": "54",
+                "diff": "--- original\n+++ mutant\n@@ -157,7 +157,8 @@\n \n     // this low-level function should be called from a contract which performs important safety checks\n     function swap(uint amount0Out, uint amount1Out, address to, bytes calldata data) external lock {\n-        require(amount0Out > 0 || amount1Out > 0, 'UniswapV2: INSUFFICIENT_OUTPUT_AMOUNT');\n+        /// DeleteExpressionMutation(`require(amount0Out > 0 || amount1Out > 0, 'UniswapV2: INSUFFICIENT_OUTPUT_AMOUNT')` |==> `assert(true)`) of: `require(amount0Out > 0 || amount1Out > 0, 'UniswapV2: INSUFFICIENT_OUTPUT_AMOUNT');`\n+        assert(true);\n         (uint112 _reserve0, uint112 _reserve1,) = getReserves(); // gas savings\n         require(amount0Out < _reserve0 && amount1Out < _reserve1, 'UniswapV2: INSUFFICIENT_LIQUIDITY');\n \n",
+                "description": "DeleteExpressionMutation",
+                "name": "54_UniswapV2Pair"
+            },
+            "link": "https://prover.certora.com/jobStatus/604718/79852334c97f4af7854fa414daa9d295?anonymousKey=311bfd639d8a162e093fdfabdb2a43288017e199",
+            "success": true,
+            "run_directory": ".certora_internal/24_11_28_19_46_31_979/.certora_sources",
+            "rule_report_link": "https://prover.certora.com/output/604718/79852334c97f4af7854fa414daa9d295?anonymousKey=311bfd639d8a162e093fdfabdb2a43288017e199"
+        },
+        {
+            "gambit_mutant": {
+                "filename": "gambit_out/mutants/55/contracts/UniswapV2Pair.sol",
+                "original_filename": "contracts/UniswapV2Pair.sol",
+                "directory": "gambit_out/mutants/55",
+                "id": "55",
+                "diff": "--- original\n+++ mutant\n@@ -157,7 +157,8 @@\n \n     // this low-level function should be called from a contract which performs important safety checks\n     function swap(uint amount0Out, uint amount1Out, address to, bytes calldata data) external lock {\n-        require(amount0Out > 0 || amount1Out > 0, 'UniswapV2: INSUFFICIENT_OUTPUT_AMOUNT');\n+        /// RequireMutation(`amount0Out > 0 || amount1Out > 0` |==> `true`) of: `require(amount0Out > 0 || amount1Out > 0, 'UniswapV2: INSUFFICIENT_OUTPUT_AMOUNT');`\n+        require(true, 'UniswapV2: INSUFFICIENT_OUTPUT_AMOUNT');\n         (uint112 _reserve0, uint112 _reserve1,) = getReserves(); // gas savings\n         require(amount0Out < _reserve0 && amount1Out < _reserve1, 'UniswapV2: INSUFFICIENT_LIQUIDITY');\n \n",
+                "description": "RequireMutation",
+                "name": "55_UniswapV2Pair"
+            },
+            "link": "https://prover.certora.com/jobStatus/604718/bb1f0e425a9f4aabab2b3a49b95dd04d?anonymousKey=4131446dd2ca2c7243d8f2e43d1bd713dc1893da",
+            "success": true,
+            "run_directory": ".certora_internal/24_11_28_19_46_10_788/.certora_sources",
+            "rule_report_link": "https://prover.certora.com/output/604718/bb1f0e425a9f4aabab2b3a49b95dd04d?anonymousKey=4131446dd2ca2c7243d8f2e43d1bd713dc1893da"
+        },
+        {
+            "gambit_mutant": {
+                "filename": "gambit_out/mutants/56/contracts/UniswapV2Pair.sol",
+                "original_filename": "contracts/UniswapV2Pair.sol",
+                "directory": "gambit_out/mutants/56",
+                "id": "56",
+                "diff": "--- original\n+++ mutant\n@@ -157,7 +157,8 @@\n \n     // this low-level function should be called from a contract which performs important safety checks\n     function swap(uint amount0Out, uint amount1Out, address to, bytes calldata data) external lock {\n-        require(amount0Out > 0 || amount1Out > 0, 'UniswapV2: INSUFFICIENT_OUTPUT_AMOUNT');\n+        /// RequireMutation(`amount0Out > 0 || amount1Out > 0` |==> `false`) of: `require(amount0Out > 0 || amount1Out > 0, 'UniswapV2: INSUFFICIENT_OUTPUT_AMOUNT');`\n+        require(false, 'UniswapV2: INSUFFICIENT_OUTPUT_AMOUNT');\n         (uint112 _reserve0, uint112 _reserve1,) = getReserves(); // gas savings\n         require(amount0Out < _reserve0 && amount1Out < _reserve1, 'UniswapV2: INSUFFICIENT_LIQUIDITY');\n \n",
+                "description": "RequireMutation",
+                "name": "56_UniswapV2Pair"
+            },
+            "link": "https://prover.certora.com/jobStatus/604718/19d3087e56614946823a3e79e488babb?anonymousKey=fd199f9b9826dc2743898cb514c5e4c7b0b9973c",
+            "success": true,
+            "run_directory": ".certora_internal/24_11_28_19_46_21_807/.certora_sources",
+            "rule_report_link": "https://prover.certora.com/output/604718/19d3087e56614946823a3e79e488babb?anonymousKey=fd199f9b9826dc2743898cb514c5e4c7b0b9973c"
+        },
+        {
+            "gambit_mutant": {
+                "filename": "gambit_out/mutants/57/contracts/UniswapV2Pair.sol",
+                "original_filename": "contracts/UniswapV2Pair.sol",
+                "directory": "gambit_out/mutants/57",
+                "id": "57",
+                "diff": "--- original\n+++ mutant\n@@ -159,7 +159,8 @@\n     function swap(uint amount0Out, uint amount1Out, address to, bytes calldata data) external lock {\n         require(amount0Out > 0 || amount1Out > 0, 'UniswapV2: INSUFFICIENT_OUTPUT_AMOUNT');\n         (uint112 _reserve0, uint112 _reserve1,) = getReserves(); // gas savings\n-        require(amount0Out < _reserve0 && amount1Out < _reserve1, 'UniswapV2: INSUFFICIENT_LIQUIDITY');\n+        /// DeleteExpressionMutation(`require(amount0Out < _reserve0 && amount1Out < _reserve1, 'UniswapV2: INSUFFICIENT_LIQUIDITY')` |==> `assert(true)`) of: `require(amount0Out < _reserve0 && amount1Out < _reserve1, 'UniswapV2: INSUFFICIENT_LIQUIDITY');`\n+        assert(true);\n \n         uint balance0;\n         uint balance1;\n",
+                "description": "DeleteExpressionMutation",
+                "name": "57_UniswapV2Pair"
+            },
+            "link": "https://prover.certora.com/jobStatus/604718/f2bd5e8bbe4f461ca1dd9f6f6a0add1a?anonymousKey=72c8fcbf1c968e1a4e69b8143387cdea4670de6f",
+            "success": true,
+            "run_directory": ".certora_internal/24_11_28_19_46_33_119/.certora_sources",
+            "rule_report_link": "https://prover.certora.com/output/604718/f2bd5e8bbe4f461ca1dd9f6f6a0add1a?anonymousKey=72c8fcbf1c968e1a4e69b8143387cdea4670de6f"
+        },
+        {
+            "gambit_mutant": {
+                "filename": "gambit_out/mutants/58/contracts/UniswapV2Pair.sol",
+                "original_filename": "contracts/UniswapV2Pair.sol",
+                "directory": "gambit_out/mutants/58",
+                "id": "58",
+                "diff": "--- original\n+++ mutant\n@@ -159,7 +159,8 @@\n     function swap(uint amount0Out, uint amount1Out, address to, bytes calldata data) external lock {\n         require(amount0Out > 0 || amount1Out > 0, 'UniswapV2: INSUFFICIENT_OUTPUT_AMOUNT');\n         (uint112 _reserve0, uint112 _reserve1,) = getReserves(); // gas savings\n-        require(amount0Out < _reserve0 && amount1Out < _reserve1, 'UniswapV2: INSUFFICIENT_LIQUIDITY');\n+        /// RequireMutation(`amount0Out < _reserve0 && amount1Out < _reserve1` |==> `true`) of: `require(amount0Out < _reserve0 && amount1Out < _reserve1, 'UniswapV2: INSUFFICIENT_LIQUIDITY');`\n+        require(true, 'UniswapV2: INSUFFICIENT_LIQUIDITY');\n \n         uint balance0;\n         uint balance1;\n",
+                "description": "RequireMutation",
+                "name": "58_UniswapV2Pair"
+            },
+            "link": "https://prover.certora.com/jobStatus/604718/500b546b41f74290baf7fc475a215085?anonymousKey=8db66336c277e79b59e5e4dbd549630aad52a04e",
+            "success": true,
+            "run_directory": ".certora_internal/24_11_28_19_46_12_514/.certora_sources",
+            "rule_report_link": "https://prover.certora.com/output/604718/500b546b41f74290baf7fc475a215085?anonymousKey=8db66336c277e79b59e5e4dbd549630aad52a04e"
+        },
+        {
+            "gambit_mutant": {
+                "filename": "gambit_out/mutants/59/contracts/UniswapV2Pair.sol",
+                "original_filename": "contracts/UniswapV2Pair.sol",
+                "directory": "gambit_out/mutants/59",
+                "id": "59",
+                "diff": "--- original\n+++ mutant\n@@ -159,7 +159,8 @@\n     function swap(uint amount0Out, uint amount1Out, address to, bytes calldata data) external lock {\n         require(amount0Out > 0 || amount1Out > 0, 'UniswapV2: INSUFFICIENT_OUTPUT_AMOUNT');\n         (uint112 _reserve0, uint112 _reserve1,) = getReserves(); // gas savings\n-        require(amount0Out < _reserve0 && amount1Out < _reserve1, 'UniswapV2: INSUFFICIENT_LIQUIDITY');\n+        /// SwapArgumentsOperatorMutation(`amount1Out < _reserve1` |==> `_reserve1 < amount1Out`) of: `require(amount0Out < _reserve0 && amount1Out < _reserve1, 'UniswapV2: INSUFFICIENT_LIQUIDITY');`\n+        require(amount0Out < _reserve0 && _reserve1 < amount1Out, 'UniswapV2: INSUFFICIENT_LIQUIDITY');\n \n         uint balance0;\n         uint balance1;\n",
+                "description": "SwapArgumentsOperatorMutation",
+                "name": "59_UniswapV2Pair"
+            },
+            "link": "https://prover.certora.com/jobStatus/604718/bf82c8050e014db2b14f89eab1d14f81?anonymousKey=760c54d3ae6cc0c526e7b6064b4c82aa60e46f48",
+            "success": true,
+            "run_directory": ".certora_internal/24_11_28_19_46_25_557/.certora_sources",
+            "rule_report_link": "https://prover.certora.com/output/604718/bf82c8050e014db2b14f89eab1d14f81?anonymousKey=760c54d3ae6cc0c526e7b6064b4c82aa60e46f48"
+        },
+        {
+            "gambit_mutant": {
+                "filename": "gambit_out/mutants/60/contracts/UniswapV2Pair.sol",
+                "original_filename": "contracts/UniswapV2Pair.sol",
+                "directory": "gambit_out/mutants/60",
+                "id": "60",
+                "diff": "--- original\n+++ mutant\n@@ -167,7 +167,8 @@\n         address _token0 = token0;\n         address _token1 = token1;\n         require(to != _token0 && to != _token1, 'UniswapV2: INVALID_TO');\n-        if (amount0Out > 0) _safeTransfer(_token0, to, amount0Out); // optimistically transfer tokens\n+        /// IfStatementMutation(`amount0Out > 0` |==> `false`) of: `if (amount0Out > 0) _safeTransfer(_token0, to, amount0Out); // optimistically transfer tokens`\n+        if (false) _safeTransfer(_token0, to, amount0Out); // optimistically transfer tokens\n         if (amount1Out > 0) _safeTransfer(_token1, to, amount1Out); // optimistically transfer tokens\n         if (data.length > 0) IUniswapV2Callee(to).uniswapV2Call(msg.sender, amount0Out, amount1Out, data);\n         balance0 = IERC20(_token0).balanceOf(address(this));\n",
+                "description": "IfStatementMutation",
+                "name": "60_UniswapV2Pair"
+            },
+            "link": "https://prover.certora.com/jobStatus/604718/4dc5ae3e2bf94c03aca9aa47c64295b1?anonymousKey=6c126c51684654a48a63aaa3fa3bcea68ef302f2",
+            "success": true,
+            "run_directory": ".certora_internal/24_11_28_19_46_38_447/.certora_sources",
+            "rule_report_link": "https://prover.certora.com/output/604718/4dc5ae3e2bf94c03aca9aa47c64295b1?anonymousKey=6c126c51684654a48a63aaa3fa3bcea68ef302f2"
+        },
+        {
+            "gambit_mutant": {
+                "filename": "gambit_out/mutants/61/contracts/UniswapV2Pair.sol",
+                "original_filename": "contracts/UniswapV2Pair.sol",
+                "directory": "gambit_out/mutants/61",
+                "id": "61",
+                "diff": "--- original\n+++ mutant\n@@ -168,7 +168,8 @@\n         address _token1 = token1;\n         require(to != _token0 && to != _token1, 'UniswapV2: INVALID_TO');\n         if (amount0Out > 0) _safeTransfer(_token0, to, amount0Out); // optimistically transfer tokens\n-        if (amount1Out > 0) _safeTransfer(_token1, to, amount1Out); // optimistically transfer tokens\n+        /// DeleteExpressionMutation(`_safeTransfer(_token1, to, amount1Out)` |==> `assert(true)`) of: `if (amount1Out > 0) _safeTransfer(_token1, to, amount1Out); // optimistically transfer tokens`\n+        if (amount1Out > 0) assert(true); // optimistically transfer tokens\n         if (data.length > 0) IUniswapV2Callee(to).uniswapV2Call(msg.sender, amount0Out, amount1Out, data);\n         balance0 = IERC20(_token0).balanceOf(address(this));\n         balance1 = IERC20(_token1).balanceOf(address(this));\n",
+                "description": "DeleteExpressionMutation",
+                "name": "61_UniswapV2Pair"
+            },
+            "link": "https://prover.certora.com/jobStatus/604718/5370cbc1a18c447fa10c8931c3eb9615?anonymousKey=472a675fa6c1905c44ec996d916fc25b9652db95",
+            "success": true,
+            "run_directory": ".certora_internal/24_11_28_19_46_13_711/.certora_sources",
+            "rule_report_link": "https://prover.certora.com/output/604718/5370cbc1a18c447fa10c8931c3eb9615?anonymousKey=472a675fa6c1905c44ec996d916fc25b9652db95"
+        },
+        {
+            "gambit_mutant": {
+                "filename": "gambit_out/mutants/62/contracts/UniswapV2Pair.sol",
+                "original_filename": "contracts/UniswapV2Pair.sol",
+                "directory": "gambit_out/mutants/62",
+                "id": "62",
+                "diff": "--- original\n+++ mutant\n@@ -169,7 +169,8 @@\n         require(to != _token0 && to != _token1, 'UniswapV2: INVALID_TO');\n         if (amount0Out > 0) _safeTransfer(_token0, to, amount0Out); // optimistically transfer tokens\n         if (amount1Out > 0) _safeTransfer(_token1, to, amount1Out); // optimistically transfer tokens\n-        if (data.length > 0) IUniswapV2Callee(to).uniswapV2Call(msg.sender, amount0Out, amount1Out, data);\n+        /// SwapArgumentsOperatorMutation(`data.length > 0` |==> `0 > data.length`) of: `if (data.length > 0) IUniswapV2Callee(to).uniswapV2Call(msg.sender, amount0Out, amount1Out, data);`\n+        if (0 > data.length) IUniswapV2Callee(to).uniswapV2Call(msg.sender, amount0Out, amount1Out, data);\n         balance0 = IERC20(_token0).balanceOf(address(this));\n         balance1 = IERC20(_token1).balanceOf(address(this));\n         }\n",
+                "description": "SwapArgumentsOperatorMutation",
+                "name": "62_UniswapV2Pair"
+            },
+            "link": "https://prover.certora.com/jobStatus/604718/0c8de448dcc84f64a3b94287fe48dc10?anonymousKey=e279d75ec77b5a10cfb7ef86c7557253285ced33",
+            "success": true,
+            "run_directory": ".certora_internal/24_11_28_19_46_25_816/.certora_sources",
+            "rule_report_link": "https://prover.certora.com/output/604718/0c8de448dcc84f64a3b94287fe48dc10?anonymousKey=e279d75ec77b5a10cfb7ef86c7557253285ced33"
+        },
+        {
+            "gambit_mutant": {
+                "filename": "gambit_out/mutants/63/contracts/UniswapV2Pair.sol",
+                "original_filename": "contracts/UniswapV2Pair.sol",
+                "directory": "gambit_out/mutants/63",
+                "id": "63",
+                "diff": "--- original\n+++ mutant\n@@ -171,7 +171,8 @@\n         if (amount1Out > 0) _safeTransfer(_token1, to, amount1Out); // optimistically transfer tokens\n         if (data.length > 0) IUniswapV2Callee(to).uniswapV2Call(msg.sender, amount0Out, amount1Out, data);\n         balance0 = IERC20(_token0).balanceOf(address(this));\n-        balance1 = IERC20(_token1).balanceOf(address(this));\n+        /// DeleteExpressionMutation(`balance1 = IERC20(_token1).balanceOf(address(this))` |==> `assert(true)`) of: `balance1 = IERC20(_token1).balanceOf(address(this));`\n+        assert(true);\n         }\n         uint amount0In = balance0 > _reserve0 - amount0Out ? balance0 - (_reserve0 - amount0Out) : 0;\n         uint amount1In = balance1 > _reserve1 - amount1Out ? balance1 - (_reserve1 - amount1Out) : 0;\n",
+                "description": "DeleteExpressionMutation",
+                "name": "63_UniswapV2Pair"
+            },
+            "link": "https://prover.certora.com/jobStatus/604718/1c3c81e3d7354153a44b190ce3193d90?anonymousKey=004c4bd1cbf33016f4fbe98498dc8f82fd82c57b",
+            "success": true,
+            "run_directory": ".certora_internal/24_11_28_19_46_38_535/.certora_sources",
+            "rule_report_link": "https://prover.certora.com/output/604718/1c3c81e3d7354153a44b190ce3193d90?anonymousKey=004c4bd1cbf33016f4fbe98498dc8f82fd82c57b"
+        },
+        {
+            "gambit_mutant": {
+                "filename": "gambit_out/mutants/64/contracts/UniswapV2Pair.sol",
+                "original_filename": "contracts/UniswapV2Pair.sol",
+                "directory": "gambit_out/mutants/64",
+                "id": "64",
+                "diff": "--- original\n+++ mutant\n@@ -171,7 +171,8 @@\n         if (amount1Out > 0) _safeTransfer(_token1, to, amount1Out); // optimistically transfer tokens\n         if (data.length > 0) IUniswapV2Callee(to).uniswapV2Call(msg.sender, amount0Out, amount1Out, data);\n         balance0 = IERC20(_token0).balanceOf(address(this));\n-        balance1 = IERC20(_token1).balanceOf(address(this));\n+        /// AssignmentMutation(`IERC20(_token1).balanceOf(address(this))` |==> `1`) of: `balance1 = IERC20(_token1).balanceOf(address(this));`\n+        balance1 = 1;\n         }\n         uint amount0In = balance0 > _reserve0 - amount0Out ? balance0 - (_reserve0 - amount0Out) : 0;\n         uint amount1In = balance1 > _reserve1 - amount1Out ? balance1 - (_reserve1 - amount1Out) : 0;\n",
+                "description": "AssignmentMutation",
+                "name": "64_UniswapV2Pair"
+            },
+            "link": "https://prover.certora.com/jobStatus/604718/9b4bdcbc322a4b1998ca570b39edb4c0?anonymousKey=3ef1152d4949b26c9a12353438c5761b695a4c68",
+            "success": true,
+            "run_directory": ".certora_internal/24_11_28_19_46_14_057/.certora_sources",
+            "rule_report_link": "https://prover.certora.com/output/604718/9b4bdcbc322a4b1998ca570b39edb4c0?anonymousKey=3ef1152d4949b26c9a12353438c5761b695a4c68"
+        },
+        {
+            "gambit_mutant": {
+                "filename": "gambit_out/mutants/65/contracts/UniswapV2Pair.sol",
+                "original_filename": "contracts/UniswapV2Pair.sol",
+                "directory": "gambit_out/mutants/65",
+                "id": "65",
+                "diff": "--- original\n+++ mutant\n@@ -173,7 +173,8 @@\n         balance0 = IERC20(_token0).balanceOf(address(this));\n         balance1 = IERC20(_token1).balanceOf(address(this));\n         }\n-        uint amount0In = balance0 > _reserve0 - amount0Out ? balance0 - (_reserve0 - amount0Out) : 0;\n+        /// BinaryOpMutation(`-` |==> `+`) of: `uint amount0In = balance0 > _reserve0 - amount0Out ? balance0 - (_reserve0 - amount0Out) : 0;`\n+        uint amount0In = balance0 > _reserve0+amount0Out ? balance0 - (_reserve0 - amount0Out) : 0;\n         uint amount1In = balance1 > _reserve1 - amount1Out ? balance1 - (_reserve1 - amount1Out) : 0;\n         require(amount0In > 0 || amount1In > 0, 'UniswapV2: INSUFFICIENT_INPUT_AMOUNT');\n         { // scope for reserve{0,1}Adjusted, avoids stack too deep errors\n",
+                "description": "BinaryOpMutation",
+                "name": "65_UniswapV2Pair"
+            },
+            "link": "https://prover.certora.com/jobStatus/604718/9913f043a3244c478cb49f130890c3e3?anonymousKey=57a2f79a54be1a9bb377c36d3a9b76cdac24d1e7",
+            "success": true,
+            "run_directory": ".certora_internal/24_11_28_19_46_26_886/.certora_sources",
+            "rule_report_link": "https://prover.certora.com/output/604718/9913f043a3244c478cb49f130890c3e3?anonymousKey=57a2f79a54be1a9bb377c36d3a9b76cdac24d1e7"
+        },
+        {
+            "gambit_mutant": {
+                "filename": "gambit_out/mutants/66/contracts/UniswapV2Pair.sol",
+                "original_filename": "contracts/UniswapV2Pair.sol",
+                "directory": "gambit_out/mutants/66",
+                "id": "66",
+                "diff": "--- original\n+++ mutant\n@@ -173,7 +173,8 @@\n         balance0 = IERC20(_token0).balanceOf(address(this));\n         balance1 = IERC20(_token1).balanceOf(address(this));\n         }\n-        uint amount0In = balance0 > _reserve0 - amount0Out ? balance0 - (_reserve0 - amount0Out) : 0;\n+        /// BinaryOpMutation(`-` |==> `%`) of: `uint amount0In = balance0 > _reserve0 - amount0Out ? balance0 - (_reserve0 - amount0Out) : 0;`\n+        uint amount0In = balance0 > _reserve0%amount0Out ? balance0 - (_reserve0 - amount0Out) : 0;\n         uint amount1In = balance1 > _reserve1 - amount1Out ? balance1 - (_reserve1 - amount1Out) : 0;\n         require(amount0In > 0 || amount1In > 0, 'UniswapV2: INSUFFICIENT_INPUT_AMOUNT');\n         { // scope for reserve{0,1}Adjusted, avoids stack too deep errors\n",
+                "description": "BinaryOpMutation",
+                "name": "66_UniswapV2Pair"
+            },
+            "link": "https://prover.certora.com/jobStatus/604718/3b28caeba1ed4be9874ac95aba624387?anonymousKey=88673ff95afb4baec87649d88e7f27ea28f2705e",
+            "success": true,
+            "run_directory": ".certora_internal/24_11_28_19_46_36_468/.certora_sources",
+            "rule_report_link": "https://prover.certora.com/output/604718/3b28caeba1ed4be9874ac95aba624387?anonymousKey=88673ff95afb4baec87649d88e7f27ea28f2705e"
+        },
+        {
+            "gambit_mutant": {
+                "filename": "gambit_out/mutants/67/contracts/UniswapV2Pair.sol",
+                "original_filename": "contracts/UniswapV2Pair.sol",
+                "directory": "gambit_out/mutants/67",
+                "id": "67",
+                "diff": "--- original\n+++ mutant\n@@ -173,7 +173,8 @@\n         balance0 = IERC20(_token0).balanceOf(address(this));\n         balance1 = IERC20(_token1).balanceOf(address(this));\n         }\n-        uint amount0In = balance0 > _reserve0 - amount0Out ? balance0 - (_reserve0 - amount0Out) : 0;\n+        /// BinaryOpMutation(`-` |==> `**`) of: `uint amount0In = balance0 > _reserve0 - amount0Out ? balance0 - (_reserve0 - amount0Out) : 0;`\n+        uint amount0In = balance0 > _reserve0**amount0Out ? balance0 - (_reserve0 - amount0Out) : 0;\n         uint amount1In = balance1 > _reserve1 - amount1Out ? balance1 - (_reserve1 - amount1Out) : 0;\n         require(amount0In > 0 || amount1In > 0, 'UniswapV2: INSUFFICIENT_INPUT_AMOUNT');\n         { // scope for reserve{0,1}Adjusted, avoids stack too deep errors\n",
+                "description": "BinaryOpMutation",
+                "name": "67_UniswapV2Pair"
+            },
+            "link": "https://prover.certora.com/jobStatus/604718/694e9534ac274d83aff37e0ba7a47f61?anonymousKey=f14d7824258173939774aa390b01ec864d6fa0d6",
+            "success": true,
+            "run_directory": ".certora_internal/24_11_28_19_46_15_244/.certora_sources",
+            "rule_report_link": "https://prover.certora.com/output/604718/694e9534ac274d83aff37e0ba7a47f61?anonymousKey=f14d7824258173939774aa390b01ec864d6fa0d6"
+        },
+        {
+            "gambit_mutant": {
+                "filename": "gambit_out/mutants/68/contracts/UniswapV2Pair.sol",
+                "original_filename": "contracts/UniswapV2Pair.sol",
+                "directory": "gambit_out/mutants/68",
+                "id": "68",
+                "diff": "--- original\n+++ mutant\n@@ -173,7 +173,8 @@\n         balance0 = IERC20(_token0).balanceOf(address(this));\n         balance1 = IERC20(_token1).balanceOf(address(this));\n         }\n-        uint amount0In = balance0 > _reserve0 - amount0Out ? balance0 - (_reserve0 - amount0Out) : 0;\n+        /// BinaryOpMutation(`-` |==> `/`) of: `uint amount0In = balance0 > _reserve0 - amount0Out ? balance0 - (_reserve0 - amount0Out) : 0;`\n+        uint amount0In = balance0 > _reserve0 - amount0Out ? balance0/(_reserve0 - amount0Out) : 0;\n         uint amount1In = balance1 > _reserve1 - amount1Out ? balance1 - (_reserve1 - amount1Out) : 0;\n         require(amount0In > 0 || amount1In > 0, 'UniswapV2: INSUFFICIENT_INPUT_AMOUNT');\n         { // scope for reserve{0,1}Adjusted, avoids stack too deep errors\n",
+                "description": "BinaryOpMutation",
+                "name": "68_UniswapV2Pair"
+            },
+            "link": "https://prover.certora.com/jobStatus/604718/9adf6c811338462db1351c23a2df2454?anonymousKey=6eb83fbad3ce23d2bdeac7e2c5b34e2fbd69a247",
+            "success": true,
+            "run_directory": ".certora_internal/24_11_28_19_46_31_266/.certora_sources",
+            "rule_report_link": "https://prover.certora.com/output/604718/9adf6c811338462db1351c23a2df2454?anonymousKey=6eb83fbad3ce23d2bdeac7e2c5b34e2fbd69a247"
+        },
+        {
+            "gambit_mutant": {
+                "filename": "gambit_out/mutants/69/contracts/UniswapV2Pair.sol",
+                "original_filename": "contracts/UniswapV2Pair.sol",
+                "directory": "gambit_out/mutants/69",
+                "id": "69",
+                "diff": "--- original\n+++ mutant\n@@ -173,7 +173,8 @@\n         balance0 = IERC20(_token0).balanceOf(address(this));\n         balance1 = IERC20(_token1).balanceOf(address(this));\n         }\n-        uint amount0In = balance0 > _reserve0 - amount0Out ? balance0 - (_reserve0 - amount0Out) : 0;\n+        /// BinaryOpMutation(`-` |==> `%`) of: `uint amount0In = balance0 > _reserve0 - amount0Out ? balance0 - (_reserve0 - amount0Out) : 0;`\n+        uint amount0In = balance0 > _reserve0 - amount0Out ? balance0 - (_reserve0%amount0Out) : 0;\n         uint amount1In = balance1 > _reserve1 - amount1Out ? balance1 - (_reserve1 - amount1Out) : 0;\n         require(amount0In > 0 || amount1In > 0, 'UniswapV2: INSUFFICIENT_INPUT_AMOUNT');\n         { // scope for reserve{0,1}Adjusted, avoids stack too deep errors\n",
+                "description": "BinaryOpMutation",
+                "name": "69_UniswapV2Pair"
+            },
+            "link": "https://prover.certora.com/jobStatus/604718/d1a3ef43457a4ee7a1e8609cac746d46?anonymousKey=1ec785f25d5b27a0957be8c064dc030caa4a4477",
+            "success": true,
+            "run_directory": ".certora_internal/24_11_28_19_46_43_135/.certora_sources",
+            "rule_report_link": "https://prover.certora.com/output/604718/d1a3ef43457a4ee7a1e8609cac746d46?anonymousKey=1ec785f25d5b27a0957be8c064dc030caa4a4477"
+        },
+        {
+            "gambit_mutant": {
+                "filename": "gambit_out/mutants/70/contracts/UniswapV2Pair.sol",
+                "original_filename": "contracts/UniswapV2Pair.sol",
+                "directory": "gambit_out/mutants/70",
+                "id": "70",
+                "diff": "--- original\n+++ mutant\n@@ -173,7 +173,8 @@\n         balance0 = IERC20(_token0).balanceOf(address(this));\n         balance1 = IERC20(_token1).balanceOf(address(this));\n         }\n-        uint amount0In = balance0 > _reserve0 - amount0Out ? balance0 - (_reserve0 - amount0Out) : 0;\n+        /// BinaryOpMutation(`-` |==> `**`) of: `uint amount0In = balance0 > _reserve0 - amount0Out ? balance0 - (_reserve0 - amount0Out) : 0;`\n+        uint amount0In = balance0 > _reserve0 - amount0Out ? balance0 - (_reserve0**amount0Out) : 0;\n         uint amount1In = balance1 > _reserve1 - amount1Out ? balance1 - (_reserve1 - amount1Out) : 0;\n         require(amount0In > 0 || amount1In > 0, 'UniswapV2: INSUFFICIENT_INPUT_AMOUNT');\n         { // scope for reserve{0,1}Adjusted, avoids stack too deep errors\n",
+                "description": "BinaryOpMutation",
+                "name": "70_UniswapV2Pair"
+            },
+            "link": "https://prover.certora.com/jobStatus/604718/5eea74e6c5804639a81044cfd9f2bbd1?anonymousKey=5a92b819fb12f17b43ae3c469e115d9aa632f295",
+            "success": true,
+            "run_directory": ".certora_internal/24_11_28_19_46_21_564/.certora_sources",
+            "rule_report_link": "https://prover.certora.com/output/604718/5eea74e6c5804639a81044cfd9f2bbd1?anonymousKey=5a92b819fb12f17b43ae3c469e115d9aa632f295"
+        },
+        {
+            "gambit_mutant": {
+                "filename": "gambit_out/mutants/71/contracts/UniswapV2Pair.sol",
+                "original_filename": "contracts/UniswapV2Pair.sol",
+                "directory": "gambit_out/mutants/71",
+                "id": "71",
+                "diff": "--- original\n+++ mutant\n@@ -173,7 +173,8 @@\n         balance0 = IERC20(_token0).balanceOf(address(this));\n         balance1 = IERC20(_token1).balanceOf(address(this));\n         }\n-        uint amount0In = balance0 > _reserve0 - amount0Out ? balance0 - (_reserve0 - amount0Out) : 0;\n+        /// SwapArgumentsOperatorMutation(`_reserve0 - amount0Out` |==> `amount0Out - _reserve0`) of: `uint amount0In = balance0 > _reserve0 - amount0Out ? balance0 - (_reserve0 - amount0Out) : 0;`\n+        uint amount0In = balance0 > _reserve0 - amount0Out ? balance0 - (amount0Out - _reserve0) : 0;\n         uint amount1In = balance1 > _reserve1 - amount1Out ? balance1 - (_reserve1 - amount1Out) : 0;\n         require(amount0In > 0 || amount1In > 0, 'UniswapV2: INSUFFICIENT_INPUT_AMOUNT');\n         { // scope for reserve{0,1}Adjusted, avoids stack too deep errors\n",
+                "description": "SwapArgumentsOperatorMutation",
+                "name": "71_UniswapV2Pair"
+            },
+            "link": "https://prover.certora.com/jobStatus/604718/7b2afea9c899455ea97c5d3da46e8413?anonymousKey=a2c50168948235dce207e5bbcd7f0bc682204091",
+            "success": true,
+            "run_directory": ".certora_internal/24_11_28_19_46_32_733/.certora_sources",
+            "rule_report_link": "https://prover.certora.com/output/604718/7b2afea9c899455ea97c5d3da46e8413?anonymousKey=a2c50168948235dce207e5bbcd7f0bc682204091"
+        },
+        {
+            "gambit_mutant": {
+                "filename": "gambit_out/mutants/72/contracts/UniswapV2Pair.sol",
+                "original_filename": "contracts/UniswapV2Pair.sol",
+                "directory": "gambit_out/mutants/72",
+                "id": "72",
+                "diff": "--- original\n+++ mutant\n@@ -174,7 +174,8 @@\n         balance1 = IERC20(_token1).balanceOf(address(this));\n         }\n         uint amount0In = balance0 > _reserve0 - amount0Out ? balance0 - (_reserve0 - amount0Out) : 0;\n-        uint amount1In = balance1 > _reserve1 - amount1Out ? balance1 - (_reserve1 - amount1Out) : 0;\n+        /// SwapArgumentsOperatorMutation(`balance1 > _reserve1 - amount1Out` |==> `_reserve1 - amount1Out > balance1`) of: `uint amount1In = balance1 > _reserve1 - amount1Out ? balance1 - (_reserve1 - amount1Out) : 0;`\n+        uint amount1In = _reserve1 - amount1Out > balance1 ? balance1 - (_reserve1 - amount1Out) : 0;\n         require(amount0In > 0 || amount1In > 0, 'UniswapV2: INSUFFICIENT_INPUT_AMOUNT');\n         { // scope for reserve{0,1}Adjusted, avoids stack too deep errors\n         uint balance0Adjusted = balance0.mul(1000).sub(amount0In.mul(3));\n",
+                "description": "SwapArgumentsOperatorMutation",
+                "name": "72_UniswapV2Pair"
+            },
+            "link": "https://prover.certora.com/jobStatus/604718/65d612c6a1df4cca839bb9640bc4a9df?anonymousKey=ed02aebbaf119ade53103bd60437937bea706e08",
+            "success": true,
+            "run_directory": ".certora_internal/24_11_28_19_46_45_539/.certora_sources",
+            "rule_report_link": "https://prover.certora.com/output/604718/65d612c6a1df4cca839bb9640bc4a9df?anonymousKey=ed02aebbaf119ade53103bd60437937bea706e08"
+        },
+        {
+            "gambit_mutant": {
+                "filename": "gambit_out/mutants/73/contracts/UniswapV2Pair.sol",
+                "original_filename": "contracts/UniswapV2Pair.sol",
+                "directory": "gambit_out/mutants/73",
+                "id": "73",
+                "diff": "--- original\n+++ mutant\n@@ -174,7 +174,8 @@\n         balance1 = IERC20(_token1).balanceOf(address(this));\n         }\n         uint amount0In = balance0 > _reserve0 - amount0Out ? balance0 - (_reserve0 - amount0Out) : 0;\n-        uint amount1In = balance1 > _reserve1 - amount1Out ? balance1 - (_reserve1 - amount1Out) : 0;\n+        /// BinaryOpMutation(`-` |==> `+`) of: `uint amount1In = balance1 > _reserve1 - amount1Out ? balance1 - (_reserve1 - amount1Out) : 0;`\n+        uint amount1In = balance1 > _reserve1 - amount1Out ? balance1+(_reserve1 - amount1Out) : 0;\n         require(amount0In > 0 || amount1In > 0, 'UniswapV2: INSUFFICIENT_INPUT_AMOUNT');\n         { // scope for reserve{0,1}Adjusted, avoids stack too deep errors\n         uint balance0Adjusted = balance0.mul(1000).sub(amount0In.mul(3));\n",
+                "description": "BinaryOpMutation",
+                "name": "73_UniswapV2Pair"
+            },
+            "link": "https://prover.certora.com/jobStatus/604718/27834a822cad498f8c290259dfcd52ce?anonymousKey=7b83f40fd50a8d4c8995fcaa65baf63440fbb63b",
+            "success": true,
+            "run_directory": ".certora_internal/24_11_28_19_46_39_323/.certora_sources",
+            "rule_report_link": "https://prover.certora.com/output/604718/27834a822cad498f8c290259dfcd52ce?anonymousKey=7b83f40fd50a8d4c8995fcaa65baf63440fbb63b"
+        },
+        {
+            "gambit_mutant": {
+                "filename": "gambit_out/mutants/74/contracts/UniswapV2Pair.sol",
+                "original_filename": "contracts/UniswapV2Pair.sol",
+                "directory": "gambit_out/mutants/74",
+                "id": "74",
+                "diff": "--- original\n+++ mutant\n@@ -174,7 +174,8 @@\n         balance1 = IERC20(_token1).balanceOf(address(this));\n         }\n         uint amount0In = balance0 > _reserve0 - amount0Out ? balance0 - (_reserve0 - amount0Out) : 0;\n-        uint amount1In = balance1 > _reserve1 - amount1Out ? balance1 - (_reserve1 - amount1Out) : 0;\n+        /// BinaryOpMutation(`-` |==> `%`) of: `uint amount1In = balance1 > _reserve1 - amount1Out ? balance1 - (_reserve1 - amount1Out) : 0;`\n+        uint amount1In = balance1 > _reserve1 - amount1Out ? balance1%(_reserve1 - amount1Out) : 0;\n         require(amount0In > 0 || amount1In > 0, 'UniswapV2: INSUFFICIENT_INPUT_AMOUNT');\n         { // scope for reserve{0,1}Adjusted, avoids stack too deep errors\n         uint balance0Adjusted = balance0.mul(1000).sub(amount0In.mul(3));\n",
+                "description": "BinaryOpMutation",
+                "name": "74_UniswapV2Pair"
+            },
+            "link": "https://prover.certora.com/jobStatus/604718/8ffda4e979bd4fdc97c1d2a0e536d20e?anonymousKey=26523ed29bff8a9153373b75e86572ba9cae2428",
+            "success": true,
+            "run_directory": ".certora_internal/24_11_28_19_46_50_897/.certora_sources",
+            "rule_report_link": "https://prover.certora.com/output/604718/8ffda4e979bd4fdc97c1d2a0e536d20e?anonymousKey=26523ed29bff8a9153373b75e86572ba9cae2428"
+        },
+        {
+            "gambit_mutant": {
+                "filename": "gambit_out/mutants/75/contracts/UniswapV2Pair.sol",
+                "original_filename": "contracts/UniswapV2Pair.sol",
+                "directory": "gambit_out/mutants/75",
+                "id": "75",
+                "diff": "--- original\n+++ mutant\n@@ -174,7 +174,8 @@\n         balance1 = IERC20(_token1).balanceOf(address(this));\n         }\n         uint amount0In = balance0 > _reserve0 - amount0Out ? balance0 - (_reserve0 - amount0Out) : 0;\n-        uint amount1In = balance1 > _reserve1 - amount1Out ? balance1 - (_reserve1 - amount1Out) : 0;\n+        /// BinaryOpMutation(`-` |==> `**`) of: `uint amount1In = balance1 > _reserve1 - amount1Out ? balance1 - (_reserve1 - amount1Out) : 0;`\n+        uint amount1In = balance1 > _reserve1 - amount1Out ? balance1**(_reserve1 - amount1Out) : 0;\n         require(amount0In > 0 || amount1In > 0, 'UniswapV2: INSUFFICIENT_INPUT_AMOUNT');\n         { // scope for reserve{0,1}Adjusted, avoids stack too deep errors\n         uint balance0Adjusted = balance0.mul(1000).sub(amount0In.mul(3));\n",
+                "description": "BinaryOpMutation",
+                "name": "75_UniswapV2Pair"
+            },
+            "link": "https://prover.certora.com/jobStatus/604718/6a3f72e4df774a30b93885ed3d6e39fb?anonymousKey=deb2f80cdada2982da4631448cdadedb88b60919",
+            "success": true,
+            "run_directory": ".certora_internal/24_11_28_19_46_59_722/.certora_sources",
+            "rule_report_link": "https://prover.certora.com/output/604718/6a3f72e4df774a30b93885ed3d6e39fb?anonymousKey=deb2f80cdada2982da4631448cdadedb88b60919"
+        },
+        {
+            "gambit_mutant": {
+                "filename": "gambit_out/mutants/76/contracts/UniswapV2Pair.sol",
+                "original_filename": "contracts/UniswapV2Pair.sol",
+                "directory": "gambit_out/mutants/76",
+                "id": "76",
+                "diff": "--- original\n+++ mutant\n@@ -174,7 +174,8 @@\n         balance1 = IERC20(_token1).balanceOf(address(this));\n         }\n         uint amount0In = balance0 > _reserve0 - amount0Out ? balance0 - (_reserve0 - amount0Out) : 0;\n-        uint amount1In = balance1 > _reserve1 - amount1Out ? balance1 - (_reserve1 - amount1Out) : 0;\n+        /// SwapArgumentsOperatorMutation(`_reserve1 - amount1Out` |==> `amount1Out - _reserve1`) of: `uint amount1In = balance1 > _reserve1 - amount1Out ? balance1 - (_reserve1 - amount1Out) : 0;`\n+        uint amount1In = balance1 > _reserve1 - amount1Out ? balance1 - (amount1Out - _reserve1) : 0;\n         require(amount0In > 0 || amount1In > 0, 'UniswapV2: INSUFFICIENT_INPUT_AMOUNT');\n         { // scope for reserve{0,1}Adjusted, avoids stack too deep errors\n         uint balance0Adjusted = balance0.mul(1000).sub(amount0In.mul(3));\n",
+                "description": "SwapArgumentsOperatorMutation",
+                "name": "76_UniswapV2Pair"
+            },
+            "link": "https://prover.certora.com/jobStatus/604718/29b5406e5435473b815ea37c38e4e0fe?anonymousKey=85feaab2716c4c40f603012f3588da5c281893ce",
+            "success": true,
+            "run_directory": ".certora_internal/24_11_28_19_46_43_244/.certora_sources",
+            "rule_report_link": "https://prover.certora.com/output/604718/29b5406e5435473b815ea37c38e4e0fe?anonymousKey=85feaab2716c4c40f603012f3588da5c281893ce"
+        },
+        {
+            "gambit_mutant": {
+                "filename": "gambit_out/mutants/77/contracts/UniswapV2Pair.sol",
+                "original_filename": "contracts/UniswapV2Pair.sol",
+                "directory": "gambit_out/mutants/77",
+                "id": "77",
+                "diff": "--- original\n+++ mutant\n@@ -175,7 +175,8 @@\n         }\n         uint amount0In = balance0 > _reserve0 - amount0Out ? balance0 - (_reserve0 - amount0Out) : 0;\n         uint amount1In = balance1 > _reserve1 - amount1Out ? balance1 - (_reserve1 - amount1Out) : 0;\n-        require(amount0In > 0 || amount1In > 0, 'UniswapV2: INSUFFICIENT_INPUT_AMOUNT');\n+        /// DeleteExpressionMutation(`require(amount0In > 0 || amount1In > 0, 'UniswapV2: INSUFFICIENT_INPUT_AMOUNT')` |==> `assert(true)`) of: `require(amount0In > 0 || amount1In > 0, 'UniswapV2: INSUFFICIENT_INPUT_AMOUNT');`\n+        assert(true);\n         { // scope for reserve{0,1}Adjusted, avoids stack too deep errors\n         uint balance0Adjusted = balance0.mul(1000).sub(amount0In.mul(3));\n         uint balance1Adjusted = balance1.mul(1000).sub(amount1In.mul(3));\n",
+                "description": "DeleteExpressionMutation",
+                "name": "77_UniswapV2Pair"
+            },
+            "link": "https://prover.certora.com/jobStatus/604718/982eb1b2e74f4b8a807ec57dd8b3c50a?anonymousKey=d71a698eff270138eb6c9742af92bf87026ee552",
+            "success": true,
+            "run_directory": ".certora_internal/24_11_28_19_46_54_224/.certora_sources",
+            "rule_report_link": "https://prover.certora.com/output/604718/982eb1b2e74f4b8a807ec57dd8b3c50a?anonymousKey=d71a698eff270138eb6c9742af92bf87026ee552"
+        },
+        {
+            "gambit_mutant": {
+                "filename": "gambit_out/mutants/78/contracts/UniswapV2Pair.sol",
+                "original_filename": "contracts/UniswapV2Pair.sol",
+                "directory": "gambit_out/mutants/78",
+                "id": "78",
+                "diff": "--- original\n+++ mutant\n@@ -175,7 +175,8 @@\n         }\n         uint amount0In = balance0 > _reserve0 - amount0Out ? balance0 - (_reserve0 - amount0Out) : 0;\n         uint amount1In = balance1 > _reserve1 - amount1Out ? balance1 - (_reserve1 - amount1Out) : 0;\n-        require(amount0In > 0 || amount1In > 0, 'UniswapV2: INSUFFICIENT_INPUT_AMOUNT');\n+        /// RequireMutation(`amount0In > 0 || amount1In > 0` |==> `true`) of: `require(amount0In > 0 || amount1In > 0, 'UniswapV2: INSUFFICIENT_INPUT_AMOUNT');`\n+        require(true, 'UniswapV2: INSUFFICIENT_INPUT_AMOUNT');\n         { // scope for reserve{0,1}Adjusted, avoids stack too deep errors\n         uint balance0Adjusted = balance0.mul(1000).sub(amount0In.mul(3));\n         uint balance1Adjusted = balance1.mul(1000).sub(amount1In.mul(3));\n",
+                "description": "RequireMutation",
+                "name": "78_UniswapV2Pair"
+            },
+            "link": "https://prover.certora.com/jobStatus/604718/d4dc96926a534b368066a40d8207ba92?anonymousKey=c262985d38616b3af588d3b17aaa936b2f476372",
+            "success": true,
+            "run_directory": ".certora_internal/24_11_28_19_47_03_510/.certora_sources",
+            "rule_report_link": "https://prover.certora.com/output/604718/d4dc96926a534b368066a40d8207ba92?anonymousKey=c262985d38616b3af588d3b17aaa936b2f476372"
+        },
+        {
+            "gambit_mutant": {
+                "filename": "gambit_out/mutants/79/contracts/UniswapV2Pair.sol",
+                "original_filename": "contracts/UniswapV2Pair.sol",
+                "directory": "gambit_out/mutants/79",
+                "id": "79",
+                "diff": "--- original\n+++ mutant\n@@ -179,7 +179,8 @@\n         { // scope for reserve{0,1}Adjusted, avoids stack too deep errors\n         uint balance0Adjusted = balance0.mul(1000).sub(amount0In.mul(3));\n         uint balance1Adjusted = balance1.mul(1000).sub(amount1In.mul(3));\n-        require(balance0Adjusted.mul(balance1Adjusted) >= uint(_reserve0).mul(_reserve1).mul(1000**2), 'UniswapV2: K');\n+        /// RequireMutation(`balance0Adjusted.mul(balance1Adjusted) >= uint(_reserve0).mul(_reserve1).mul(1000**2)` |==> `false`) of: `require(balance0Adjusted.mul(balance1Adjusted) >= uint(_reserve0).mul(_reserve1).mul(1000**2), 'UniswapV2: K');`\n+        require(false, 'UniswapV2: K');\n         }\n \n         _update(balance0, balance1, _reserve0, _reserve1);\n",
+                "description": "RequireMutation",
+                "name": "79_UniswapV2Pair"
+            },
+            "link": "https://prover.certora.com/jobStatus/604718/798f53b5d5284ceb89e8de36f79e116b?anonymousKey=e274cc510c8b33061c2c044496fb29e100c7c9c2",
+            "success": true,
+            "run_directory": ".certora_internal/24_11_28_19_46_45_379/.certora_sources",
+            "rule_report_link": "https://prover.certora.com/output/604718/798f53b5d5284ceb89e8de36f79e116b?anonymousKey=e274cc510c8b33061c2c044496fb29e100c7c9c2"
+        },
+        {
+            "gambit_mutant": {
+                "filename": "gambit_out/mutants/80/contracts/UniswapV2Pair.sol",
+                "original_filename": "contracts/UniswapV2Pair.sol",
+                "directory": "gambit_out/mutants/80",
+                "id": "80",
+                "diff": "--- original\n+++ mutant\n@@ -179,7 +179,8 @@\n         { // scope for reserve{0,1}Adjusted, avoids stack too deep errors\n         uint balance0Adjusted = balance0.mul(1000).sub(amount0In.mul(3));\n         uint balance1Adjusted = balance1.mul(1000).sub(amount1In.mul(3));\n-        require(balance0Adjusted.mul(balance1Adjusted) >= uint(_reserve0).mul(_reserve1).mul(1000**2), 'UniswapV2: K');\n+        /// BinaryOpMutation(`**` |==> `/`) of: `require(balance0Adjusted.mul(balance1Adjusted) >= uint(_reserve0).mul(_reserve1).mul(1000**2), 'UniswapV2: K');`\n+        require(balance0Adjusted.mul(balance1Adjusted) >= uint(_reserve0).mul(_reserve1).mul(1000/2), 'UniswapV2: K');\n         }\n \n         _update(balance0, balance1, _reserve0, _reserve1);\n",
+                "description": "BinaryOpMutation",
+                "name": "80_UniswapV2Pair"
+            },
+            "link": "https://prover.certora.com/jobStatus/604718/871c1682302a49d985ba63e1bbb67730?anonymousKey=4de3ac8c9510a5267e3c2e16dca641fc50d43feb",
+            "success": true,
+            "run_directory": ".certora_internal/24_11_28_19_46_56_059/.certora_sources",
+            "rule_report_link": "https://prover.certora.com/output/604718/871c1682302a49d985ba63e1bbb67730?anonymousKey=4de3ac8c9510a5267e3c2e16dca641fc50d43feb"
+        }
+    ]
+}

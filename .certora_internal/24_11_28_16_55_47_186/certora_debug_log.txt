@@ -1,0 +1,12 @@
+Saving last configuration file to .certora_internal/24_11_28_16_55_47_186/run.conf
+There is no TAC file. Going to script EVMVerifier/certoraBuild.py to main_with_args()
+Creating dir /home/joyboy3/Audits/Certora/UniV2/forkedV2/v2-core/.certora_internal/24_11_28_16_55_47_186/.certora_config
+In /home/joyboy3/Audits/Certora/UniV2/forkedV2/v2-core/certora/specs/V2Pair.spec, found the imports: [('methods/IV2Pair.spec', '10:2')]
+In /home/joyboy3/Audits/Certora/UniV2/forkedV2/v2-core/certora/specs/methods/IV2Pair.spec, found the imports: []
+copying spec file /home/joyboy3/Audits/Certora/UniV2/forkedV2/v2-core/certora/specs/V2Pair.spec to /home/joyboy3/Audits/Certora/UniV2/forkedV2/v2-core/.certora_internal/24_11_28_16_55_47_186/.certora_sources/.0_V2Pair.spec.spec
+writing /home/joyboy3/Audits/Certora/UniV2/forkedV2/v2-core/.certora_internal/24_11_28_16_55_47_186/.certora_verify.json
+running ['java', '-jar', '/home/joyboy3/.local/lib/python3.10/site-packages/certora_jars/Typechecker.jar', '-buildDirectory', '/home/joyboy3/Audits/Certora/UniV2/forkedV2/v2-core/.certora_internal/24_11_28_16_55_47_186', '-assumeUnwindCond', '-rule', 'integrityOfSwapWithoutFL', '-ruleSanityChecks', 'basic', '-summaryRecursionLimit', '1']
+Failed to run Certora Prover locally. Please check the errors below for problems in the specifications (.spec files) or the prover_args defined in the .conf file.
+[main] ERROR ALWAYS - Found errors in certora/specs/V2Pair.spec:
+[main] ERROR ALWAYS - Error in spec file (V2Pair.spec:337:1): Syntax error: unexpected token near `}`
+build failed

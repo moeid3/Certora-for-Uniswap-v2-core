@@ -1,0 +1,13 @@
+{
+    "topics": [
+        {
+            "name": "type_check",
+            "messages": [
+                {
+                    "message": "Error in spec file (V2Pair.spec:460:16): Syntax error: unexpected token near `==`",
+                    "location": []
+                }
+            ]
+        }
+    ]
+}

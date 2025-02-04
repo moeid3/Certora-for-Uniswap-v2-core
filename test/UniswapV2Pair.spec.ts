@@ -112,8 +112,9 @@ describe('UniswapV2Pair', () => {
     const token0Amount = expandTo18Decimals(5)
     const token1Amount = expandTo18Decimals(10)
     await addLiquidity(token0Amount, token1Amount)
-
+    // amount0In
     const swapAmount = expandTo18Decimals(1)
+    // amount1Out
     const expectedOutputAmount = bigNumberify('1662497915624478906')
     await token0.transfer(pair.address, swapAmount)
     await expect(pair.swap(0, expectedOutputAmount, wallet.address, '0x', overrides))
@@ -125,13 +126,17 @@ describe('UniswapV2Pair', () => {
       .withArgs(wallet.address, swapAmount, 0, 0, expectedOutputAmount, wallet.address)
 
     const reserves = await pair.getReserves()
+    // r0After == r0Before + amount0In
     expect(reserves[0]).to.eq(token0Amount.add(swapAmount))
+    // r1After == r1Before - amount1Out
     expect(reserves[1]).to.eq(token1Amount.sub(expectedOutputAmount))
     expect(await token0.balanceOf(pair.address)).to.eq(token0Amount.add(swapAmount))
     expect(await token1.balanceOf(pair.address)).to.eq(token1Amount.sub(expectedOutputAmount))
     const totalSupplyToken0 = await token0.totalSupply()
     const totalSupplyToken1 = await token1.totalSupply()
+    // after0 == totalSupply0 - r0Before - amount0In + amount0Out
     expect(await token0.balanceOf(wallet.address)).to.eq(totalSupplyToken0.sub(token0Amount).sub(swapAmount))
+    // after1 == totalSupply1 - r1Before - amount1In + amount1Out
     expect(await token1.balanceOf(wallet.address)).to.eq(totalSupplyToken1.sub(token1Amount).add(expectedOutputAmount))
   })
 

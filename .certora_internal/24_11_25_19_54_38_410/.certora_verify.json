@@ -1,0 +1,14 @@
+{
+    "importFilesToOrigRelpaths": {
+        "/home/joyboy3/Audits/Certora/UniV2/forkedV2/v2-core/certora/specs/methods/IV2Pair.spec": "certora/specs/methods/IV2Pair.spec"
+    },
+    "primary_contract": "UniswapV2Pair",
+    "specfile": "/home/joyboy3/Audits/Certora/UniV2/forkedV2/v2-core/certora/specs/V2Pair.spec",
+    "specfileOrigRelpath": "certora/specs/V2Pair.spec",
+    "specfilesToImportDecls": {
+        "/home/joyboy3/Audits/Certora/UniV2/forkedV2/v2-core/certora/specs/V2Pair.spec": [
+            "methods/IV2Pair.spec"
+        ]
+    },
+    "type": "spec"
+}
