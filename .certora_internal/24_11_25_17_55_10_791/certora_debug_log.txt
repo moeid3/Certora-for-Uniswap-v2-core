@@ -1,8 +1,0 @@
-Saving last configuration file to .certora_internal/24_11_25_17_55_10_791/run.conf
-There is no TAC file. Going to script EVMVerifier/certoraBuild.py to main_with_args()
-Creating dir /home/joyboy3/Audits/Certora/UniV2/forkedV2/v2-core/.certora_internal/24_11_25_17_55_10_791/.certora_config
-In /home/joyboy3/Audits/Certora/UniV2/forkedV2/v2-core/certora/specs/V2Pair.spec, found the imports: [('methods/IV2Pair.spec', '10:2')]
-In /home/joyboy3/Audits/Certora/UniV2/forkedV2/v2-core/certora/specs/methods/IV2Pair.spec, found the imports: []
-copying spec file /home/joyboy3/Audits/Certora/UniV2/forkedV2/v2-core/certora/specs/V2Pair.spec to /home/joyboy3/Audits/Certora/UniV2/forkedV2/v2-core/.certora_internal/24_11_25_17_55_10_791/.certora_sources/.0_V2Pair.spec.spec
-writing /home/joyboy3/Audits/Certora/UniV2/forkedV2/v2-core/.certora_internal/24_11_25_17_55_10_791/.certora_verify.json
-running ['java', '-jar', '/home/joyboy3/.local/lib/python3.10/site-packages/certora_jars/Typechecker.jar', '-buildDirectory', '/home/joyboy3/Audits/Certora/UniV2/forkedV2/v2-core/.certora_internal/24_11_25_17_55_10_791', '-assumeUnwindCond', '-rule', 'a', '-ruleSanityChecks', 'basic', '-summaryRecursionLimit', '1', '-destructiveOptimizations', 'enable']
